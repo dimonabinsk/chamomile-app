@@ -1,13 +1,32 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  @font-face {
+    font-family: "Futura Bk RT";
+    font-weight: 400;
+    src: local("Futura Bk RT"),
+      url(./fonts/futurabkbtrusbyme_book.otf) format("opentype");
+  }
+
+  @font-face {
+    font-family: "Futura Bk BT";
+    font-weight: 400;
+    src: local("Futura"),
+      url(./fonts/futuramdbtrusbyme_bold.otf) format("opentype");
+  }
+
+  @font-face {
+    font-family: "Futura Md BT";
+    font-weight: 400;
+    src: local("Futura"),
+      url(./fonts/futuramdbtrusbyme_medium.otf) format("opentype");
+  }
+
+  @font-face {
+    font-family: "Miama Nueva";
+    font-weight: 400;
+    src: local("Miama Nueva"), url(./fonts/miamanueva.otf) format("opentype");
+  }
 }
