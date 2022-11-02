@@ -3,7 +3,13 @@ import NavBar from "./navBar/navBar";
 // import PropTypes from "prop-types";
 
 const Header = () => {
-  return <NavBar />;
+  return (
+    <>
+      <header>
+        <NavBar />
+      </header>
+    </>
+  );
 };
 
 // Header.propTypes = {};

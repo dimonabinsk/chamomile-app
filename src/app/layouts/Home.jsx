@@ -1,9 +1,12 @@
 import React from "react";
+import { Banner } from "../components/ui/home";
 // import PropTypes from "prop-types";
 
 const Home = () => {
     return (
-        <h1>Home</h1>
+        <>
+            <Banner/>        
+        </>
     );
 };
 

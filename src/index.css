@@ -30,3 +30,56 @@
     src: local("Miama Nueva"), url(./fonts/miamanueva.otf) format("opentype");
   }
 }
+
+@layer utilities {
+/*  COLORS */
+:root {
+  --color-hippieGreen: #00cc00;
+  --color-withe: #fff;
+  --color-black: #1c1c1c;
+  --color-silver: #c4c4c4;
+  --color-green: #0c0;
+  --position-banner: calc(100% + (60 - 100) * ((100vw - 320px) / (1440 - 320)));
+}
+ 
+ .banner-img {
+   background: url("http://localhost:9000/images/banner/banner_img.jpg"), var(--color-silver);
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+
+ .banner-title {
+   font-size: calc(28px + (60 - 28) * ((100vw - 320px) / (1440 - 320)));
+   line-height: calc(35px + (77 - 35) * ((100vw - 320px) / (1440 - 320)));
+ }
+
+ .banner-txt {
+   font-family: "Miama Nueva";
+   white-space: nowrap;
+   font-style: normal;
+   font-weight: normal;
+   font-size: calc(24px + (42 - 24) * ((100vw - 320px) / (1440 - 320)));
+   line-height: calc(40px + (100 - 40) * ((100vw - 320px) / (1440 - 320)));
+   position: absolute;
+
+ }
+
+
+ .banner-link {
+   background: var(--color-withe);
+   border: 2px solid var(--color-hippieGreen);
+   color: var(--color-black);
+   line-height: 24px;
+   transition-property: background-color, color;
+   transition: 0.3s;
+
+   
+ }
+
+ .banner-link:hover,
+ .banner-link:active {
+   background-color: var(--color-hippieGreen);
+   color: var(--color-withe);
+ }
+
+}

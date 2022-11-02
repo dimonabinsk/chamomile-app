@@ -23,7 +23,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="fixed top-2 lg:top-5 left-0 right-0 mx-auto max-w-screen-3xl border-transparent bg-gray-100 py-2 px-4 transition-all dark:bg-main-black lg:px-8 lg:py-4 dark:shadow-lg">
+    <Navbar className="fixed top-2 left-0 right-0 z-50 mx-auto max-w-screen-3xl border-transparent bg-gray-100 py-2 px-4 transition-all dark:bg-main-black dark:shadow-lg lg:top-5 lg:px-8 lg:py-4 lg:opacity-80">
       <div className="container mx-auto flex items-center justify-between">
         {<Logo darkMode={isDarkMode} />}
         <div className="hidden lg:block">{<NavList />}</div>
