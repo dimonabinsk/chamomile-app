@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { LoginForm, RegisterForm } from "../components/ui/userForm";
 import Link from "../components/ui/home/link/link";
 
-const User = ({ fixed }) => {
+const User = () => {
   const { type } = useParams();
   const history = useHistory();
   const [typeForm, setTypeForm] = useState(
@@ -35,8 +35,8 @@ const User = ({ fixed }) => {
   );
 };
 
-User.propTypes = {
-  fixed: PropTypes.bool,
-};
+// User.propTypes = {
+//   fixed: PropTypes.bool,
+// };
 
 export default User;
