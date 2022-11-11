@@ -1,9 +1,10 @@
 import React from "react";
+import { CatalogPage } from "../components/pages";
 // import PropTypes from "prop-types";
 
 const Catalog = () => {
     return (
-        <h1 className={"mt-28"}>Catalog</h1>
+       <CatalogPage />
     );
 };
 

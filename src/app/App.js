@@ -24,14 +24,13 @@ function App() {
   return (
     <>
       <div
-        className={` relative ${
+        className={`relative ${
           fixedHeader ? "top-[70px] lg:top-[107px]" : "top-0"
         }`}
       >
         <Header fixed={fixedHeader} />
 
         <Switch>
-          {/* <Route path="/catalog/" component={PlantPage} /> */}
           <Route path="/accessories" component={Accessories} />
           <Route path="/plantcare" component={PlantCare} />
           <Route path="/blog" component={Blog} />

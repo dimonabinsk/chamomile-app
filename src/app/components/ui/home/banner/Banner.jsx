@@ -6,7 +6,7 @@ import SocialNetwork from "../socialNetwork/socialNetwork";
 
 const Banner = () => {
   return (
-    <section className="relative top-16 lg:top-52 left-0 right-0 z-10 max-w-screen-3xl px-4 sm:px-5">
+    <section className="relative top-16 left-0 right-0 z-10 max-w-screen-3xl px-4 sm:px-5 lg:top-52">
       <h2 className="sr-only">Баннер</h2>
       <div
         className={`banner-img absolute top-[200px] right-0 h-[80vw] w-[80vw] rounded-lg sm:top-0 sm:right-auto sm:left-[20vw] sm:h-[50vw] sm:w-[70vw] lg:h-[40vw] `}
@@ -20,7 +20,7 @@ const Banner = () => {
         <span className="banner-txt  top-[10vw] left-[30vw] text-[#00cc00] sm:top-[3vw] sm:left-[20vw]">
           с любовью...
         </span>
-        <p className="absolute top-[20vw] leading-[24px] dark:text-white dark:mix-blend-difference sm:top-[15vw] lg:top-40">
+        <p className="absolute top-[20vw] font-bk-rt leading-[24px] dark:text-white dark:mix-blend-difference sm:top-[15vw] lg:top-40">
           Мы поможем вам подобрать лучшие растения для вашего помещения,
           оранжереи и сада, доставим их к вашей двери и поможем ухаживать за
           ними.
@@ -28,7 +28,7 @@ const Banner = () => {
         <div>
           <Link
             to="/catalog"
-            className="banner-link absolute top-56 m-0 rounded py-2 px-5 focus:outline-none sm:top-64 sm:py-3 sm:px-8"
+            className="banner-link absolute top-56 m-0 rounded py-2 px-5 font-bk-rt focus:outline-none sm:top-64 sm:py-3 sm:px-8"
             role="button"
           >
             Просмотреть каталог
