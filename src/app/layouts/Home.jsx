@@ -1,15 +1,19 @@
 import React from "react";
 import { Banner } from "../components/ui/home";
-// import PropTypes from "prop-types";
+import Link from "../components/ui/home/link/link";
+import PropTypes from "prop-types";
 
 const Home = () => {
-    return (
-        <>
-            <Banner/>        
-        </>
-    );
+  return (
+    <>
+      <Banner />
+      <Link />
+    </>
+  );
 };
 
-// Home.propTypes = {};
+Home.propTypes = {
+  fixed: PropTypes.bool,
+};
 
 export default Home;

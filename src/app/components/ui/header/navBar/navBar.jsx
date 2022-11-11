@@ -2,11 +2,15 @@
 import { useState, useEffect } from "react";
 import { useDarkMode } from "../../../../hooks/useDarkMode";
 
-import { Navbar, MobileNav } from "@material-tailwind/react";
+import { Navbar, MobileNav, Tooltip } from "@material-tailwind/react";
 import OpenNavBtn from "../openNavBtn/openNavBtn";
 import ChangeThemeBtn from "../changeThemeBtn/changeThemeBtn";
 import NavList from "../navList/navList";
 import Logo from "../logo/logo";
+import Search from "../../../common/form/search/search";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBagShopping, faUser } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   const [openNav, setOpenNav] = useState(false);
@@ -23,21 +27,75 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="fixed top-2 left-0 right-0 z-50 mx-auto max-w-screen-3xl border-transparent bg-gray-100 py-2 px-4 transition-all dark:bg-main-black dark:shadow-lg lg:top-5 lg:px-8 lg:py-4 lg:opacity-80">
+    <Navbar
+      className={` mx-auto max-w-screen-3xl border-none bg-gray-100 transition-all dark:bg-main-black dark:shadow-lg lg:top-5 lg:px-8 lg:py-4 lg:opacity-90`}
+    >
       <div className="container mx-auto flex items-center justify-between">
         {<Logo darkMode={isDarkMode} />}
-        <div className="hidden lg:block">{<NavList />}</div>
+        <div className="hidden lg:block">
+          {<Search />}
+          {<NavList />}
+        </div>
+        <div className=" flex flex-grow justify-around lg:w-20 lg:flex-grow-0 lg:justify-between">
+
+          <NavLink to={"/user"} exact>
+            <Tooltip
+            content="Личный кабинет"
+            animate={{
+              mount: { scale: 1, y: 0 },
+              unmount: { scale: 0, y: 25 },
+            }}
+            className={`bg-transparent font-bk-rt ${
+              !isDarkMode ? "text-green-300" : "text-green-100"
+            }`}
+          >
+            <FontAwesomeIcon
+              icon={faUser}
+              size="xl"
+              className={
+                " cursor-pointer text-[#79a668] hover:scale-105 hover:text-[#00cc00]"
+              }
+            />
+          </Tooltip>
+          </NavLink>
+          
+          <div>
+           <Tooltip
+            content="Корзина"
+            animate={{
+              mount: { scale: 1, y: 0 },
+              unmount: { scale: 0, y: 25 },
+            }}
+            className={`bg-transparent font-bk-rt ${
+              !isDarkMode ? "text-green-300" : "text-green-100"
+            }`}
+          >
+            <FontAwesomeIcon
+              icon={faBagShopping}
+              size="xl"
+              className={
+                " cursor-pointer text-[#79a668] hover:scale-105 hover:text-[#00cc00]"
+              }
+            />
+          </Tooltip>
+          <span className=" ml-2 text-green-100">0</span> 
+          </div>
+          
+        </div>
+
         {
           <ChangeThemeBtn
             onChangeTheme={handleModeTheme}
             darkMode={isDarkMode}
-            classes={"hidden lg:inline-block"}
+            classes={"hidden lg:inline-block relative -right-5"}
           />
         }
+
         {<OpenNavBtn open={openNav} onOpen={() => setOpenNav(!openNav)} />}
       </div>
       <MobileNav open={openNav}>
         {<NavList />}
+        {<Search />}
         <div className="ml-0">
           {
             <ChangeThemeBtn

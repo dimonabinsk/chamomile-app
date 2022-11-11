@@ -1,29 +1,43 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { IconButton } from "@material-tailwind/react";
+import { IconButton, Tooltip } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
-const ChangeThemeBtn = ({onChangeTheme, darkMode, classes}) => {
-    return (
-        <IconButton
-          variant="text"
-          className={classes}
-          onClick={onChangeTheme}
+const ChangeThemeBtn = ({ onChangeTheme, darkMode, classes }) => {
+  return (
+    <IconButton variant="text" className={classes} onClick={onChangeTheme}>
+      {darkMode ? (
+        <Tooltip
+          content="Включить свет"
+          animate={{
+            mount: { scale: 1, y: 0 },
+            unmount: { scale: 0, y: 25 },
+          }}
+          className="bg-transparent font-bk-rt text-gray-100"
         >
-          {darkMode ? (
-            <FontAwesomeIcon color="#ffffff" size="2xl" icon={faMoon} />
-          ) : (
-            <FontAwesomeIcon color="#ff8c00" size="2xl" icon={faSun} />
-          )}
-        </IconButton>
-    );
+          <FontAwesomeIcon color="#f7f7f7" size="2xl" icon={faMoon} />
+        </Tooltip>
+      ) : (
+        <Tooltip
+          content="Выключить свет"
+          animate={{
+            mount: { scale: 1, y: 0 },
+            unmount: { scale: 0, y: 25 },
+          }}
+          className="bg-transparent font-bk-rt text-sun"
+        >
+          <FontAwesomeIcon color="#ff8c00" size="2xl" icon={faSun} />
+        </Tooltip>
+      )}
+    </IconButton>
+  );
 };
 
 ChangeThemeBtn.propTypes = {
-    onChangeTheme:PropTypes.func.isRequired,
-    darkMode: PropTypes.bool.isRequired,
-    classes:PropTypes.string.isRequired
+  onChangeTheme: PropTypes.func.isRequired,
+  darkMode: PropTypes.bool.isRequired,
+  classes: PropTypes.string.isRequired,
 };
 
 export default ChangeThemeBtn;
