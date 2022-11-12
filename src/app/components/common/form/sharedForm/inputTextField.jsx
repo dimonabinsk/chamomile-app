@@ -29,6 +29,7 @@ const InputTextField = ({ title, control, name, type }) => {
               value={value}
               id={name}
               name={name}
+              color="green"
               icon={
                 type === "password" && (
                   <IconButton

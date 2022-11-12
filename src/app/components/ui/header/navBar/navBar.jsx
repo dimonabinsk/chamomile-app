@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState, useEffect } from "react";
-import { useDarkMode } from "../../../../hooks/useDarkMode";
+import { useDarkMode } from "../../../../hooks";
 
 import { Navbar, MobileNav, Tooltip } from "@material-tailwind/react";
 import OpenNavBtn from "../openNavBtn/openNavBtn";

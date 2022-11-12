@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 // import PropTypes from "prop-types";
-import { LoginForm, RegisterForm } from "../components/ui/userForm";
+import { LoginFormCard, RegisterFormCard } from "../components/ui/userForm";
 import Link from "../components/ui/home/link/link";
 
 const User = () => {
   const { type } = useParams();
   const history = useHistory();
   const [typeForm, setTypeForm] = useState(
-    type === "login" ? type : "register"
+    type === "register" ? type : "login"
   );
   useEffect(() => {
     history.push(`/user/${typeForm}`);
@@ -22,11 +22,11 @@ const User = () => {
       <div className="relative top-[63px] mx-4 flex flex-col items-center lg:top-[100px] lg:mx-8">
         {typeForm === "login" ? (
           <>
-            <LoginForm onToggleForm={toggleFormType} />
+            <LoginFormCard onToggleForm={toggleFormType} />
           </>
         ) : (
           <>
-            <RegisterForm onToggleForm={toggleFormType} />
+            <RegisterFormCard onToggleForm={toggleFormType} />
           </>
         )}
         <Link />

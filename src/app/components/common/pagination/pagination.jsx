@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 // import _ from "lodash";
-import { usePagination, DOTS } from "../../../hooks/usePagination";
+import { usePagination, DOTS } from "../../../hooks";
 
 const Pagination = ({
   totalCount,

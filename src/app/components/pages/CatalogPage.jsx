@@ -40,7 +40,7 @@ const CatalogPage = () => {
         <div className=" grid  w-full grid-cols-1 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4 lg:gap-4">
           {catalogCrop.map((item) => {
             return (
-              <div key={item.id} className="my-8">
+              <div key={`${item.id}_${item.name}`} className="my-8">
                 <GetCard
                   path={`/catalog/${item.id}`}
                   src={`${item.images[0]}`}

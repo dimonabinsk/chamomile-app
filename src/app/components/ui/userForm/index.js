@@ -1,4 +1,4 @@
-import LoginForm from "./loginForm";
-import RegisterForm from "./registerForm";
+import RegisterFormCard from "./registerFormCard";
+import LoginFormCard from "./loginFormCard";
 
-export { LoginForm, RegisterForm };
+export { RegisterFormCard, LoginFormCard };

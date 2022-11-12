@@ -35,12 +35,11 @@ module.exports = withMT({
       keyframes: {
         birth: {
           "0%": { opacity: "0" },
-          "50%": { opacity: "0.5" },
           "100%": { opacity: "1" },
         },
       },
       animation: {
-        birth: "birth 0.3s",
+        birth: "birth 0.8s",
       },
     },
   },
