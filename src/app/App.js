@@ -1,16 +1,15 @@
-import { useState, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import Header from "./components/ui/header";
 import { Accessories, Blog, Catalog, Home, PlantCare, User } from "./layouts";
 
 function App() {
-  document.body.className = "transition-all bg-white dark:bg-main-black-body";
   const [fixedHeader, setFixedHeader] = useState(false);
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [scrollDistance, setScrollDistance] = useState(0);
 
-  useMemo(() => {
+  useEffect(() => {
     window.onscroll = () => {
       setScrollDistance(window.scrollY);
       if ((scrollDistance > lastScrollTop || !scrollDistance) && fixedHeader) {

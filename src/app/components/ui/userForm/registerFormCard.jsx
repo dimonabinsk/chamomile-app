@@ -25,7 +25,7 @@ const RegisterFormCard = ({ onToggleForm }) => {
     resolver: yupResolver(ControlledFormSchema),
   });
 
-  console.log(control._formValues);
+  // console.log(control._formValues);
 
   // Отправка формы
   const onFormSubmit = (formData) => {
@@ -38,10 +38,13 @@ const RegisterFormCard = ({ onToggleForm }) => {
     <Card className="w-full font-bk-bt sm:w-3/4 lg:w-1/2">
       <CardHeader
         variant="gradient"
-        color="green"
-        className="mb-4 grid h-20 place-items-center"
+        className="mb-4 grid h-20 place-items-center bg-green-1"
       >
-        <Typography variant="h4" color="white" className="font-bk-bt">
+        <Typography
+          variant="h4"
+          color="white"
+          className="font-bk-bt text-main-white"
+        >
           Регистрация
         </Typography>
       </CardHeader>
@@ -69,7 +72,7 @@ const RegisterFormCard = ({ onToggleForm }) => {
           <Button
             type="submit"
             color="green"
-            className={"mt-6 bg-green-600 font-bk-rt"}
+            className={"mt-6 bg-green-1 font-bk-rt"}
             variant="gradient"
             disabled={!isValid}
             fullWidth
@@ -81,14 +84,14 @@ const RegisterFormCard = ({ onToggleForm }) => {
       <CardFooter className="pt-0">
         <Typography
           variant="small"
-          className="mt-6 flex justify-center font-bk-rt"
+          className="mt-6 flex justify-center font-bk-rt text-graphite"
         >
           У вас уже есть учетная запись?{" "}
           <Typography
             as={Link}
             to={"/user/login"}
             variant="small"
-            className="ml-1 border-b-2 border-b-transparent font-bk-bt font-bold text-green-300 hover:border-b-green-600 hover:text-green-600"
+            className="ml-1 border-b-2 border-b-transparent font-bk-bt font-bold text-green-4 hover:border-b-green-1 hover:text-green-1"
             onClick={onToggleForm}
           >
             Войти

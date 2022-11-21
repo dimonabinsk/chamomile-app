@@ -14,7 +14,7 @@ const ChangeThemeBtn = ({ onChangeTheme, darkMode, classes }) => {
             mount: { scale: 1, y: 0 },
             unmount: { scale: 0, y: 25 },
           }}
-          className="bg-transparent font-bk-rt text-gray-100"
+          className="bg-transparent font-bk-rt text-main-white"
         >
           <FontAwesomeIcon color="#f7f7f7" size="2xl" icon={faMoon} />
         </Tooltip>

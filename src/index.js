@@ -5,6 +5,8 @@ import "./index.css";
 import { ThemeProvider } from "@material-tailwind/react";
 import App from "./app/App";
 
+
+document.body.className = "transition-all bg-main-white dark:bg-main-black-body font-bk-rt";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>

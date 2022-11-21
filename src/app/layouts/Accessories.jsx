@@ -3,7 +3,7 @@ import React from "react";
 const Accessories = () => {
   return (
     <>
-      <h1 className={"mt-20 text-gray-900 dark:text-white"}>Аксессуары</h1>
+      <h1 className={"mt-20 text-gray-9 dark:text-main-white"}>Аксессуары</h1>
     </>
   );
 };

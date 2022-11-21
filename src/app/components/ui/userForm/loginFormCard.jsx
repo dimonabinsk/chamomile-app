@@ -34,13 +34,13 @@ const LoginFormCard = ({ onToggleForm }) => {
     reset();
   };
   return (
-    <Card className="w-full sm:w-3/4 lg:w-1/2 font-bk-bt">
+    <Card className="w-full font-bk-bt sm:w-3/4 lg:w-1/2">
       <CardHeader
         variant="gradient"
-        color="green"
-        className="mb-4 grid h-20 place-items-center"
+        // color="green"
+        className="mb-4 grid h-20 place-items-center bg-green-1"
       >
-        <Typography variant="h4" color="white" className="font-bk-bt">
+        <Typography variant="h4" className="font-bk-bt text-main-white">
           Авторизация
         </Typography>
       </CardHeader>
@@ -60,12 +60,12 @@ const LoginFormCard = ({ onToggleForm }) => {
           />
 
           <div className="-ml-2.5">
-            <Checkbox label="Запомнить меня" />
+            <Checkbox label="Запомнить меня" color="green" />
           </div>
           <Button
             type="submit"
             color="green"
-            className={"mt-6 bg-green-600 font-bk-rt"}
+            className={"mt-6 bg-green-1 font-bk-rt"}
             variant="gradient"
             disabled={!isValid}
             fullWidth
@@ -77,14 +77,14 @@ const LoginFormCard = ({ onToggleForm }) => {
       <CardFooter className="pt-0">
         <Typography
           variant="small"
-          className="mt-6 flex justify-center font-bk-rt"
+          className="mt-6 flex justify-center font-bk-rt text-graphite"
         >
           У вас нет учетной записи?{" "}
           <Typography
             as={Link}
             to={"/user/login"}
             variant="small"
-            className="ml-1 border-b-2 border-b-transparent font-bk-bt font-bold text-green-300 hover:border-b-green-600 hover:text-green-600"
+            className="ml-1 border-b-2 border-b-transparent font-bk-bt font-bold text-green-4 hover:border-b-green-1 hover:text-green-1"
             onClick={onToggleForm}
           >
             Регистрация

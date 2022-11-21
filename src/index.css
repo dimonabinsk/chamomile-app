@@ -31,57 +31,57 @@
   }
 }
 
-@layer utilities {
-/*  COLORS */
-:root {
-  --color-withe: #fff;
-  --color-black: #1c1c1c;
-  --color-silver: #c4c4c4;
-  --color-green: #0c0;
+@layer components {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #4e7440 #79a668;
+  }
+  *::-webkit-scrollbar {
+    max-width: 10px; /* ширина scrollbar */
+  }
+  .scroll_card::-webkit-scrollbar {
+    max-width: 6px; /* ширина scrollbar */
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent; /* цвет дорожки */
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: transparent; /* цвет плашки */
+    border-radius: 10px; /* закругления плашки */
+    border: 3px solid #79a668; /* border вокруг плашки */
+  }
+  .scroll_card::-webkit-scrollbar-thumb {
+    background-color: transparent; /* цвет плашки */
+    border-radius: 6px; /* закругления плашки */
+    border: 2px solid #79a668; /* border вокруг плашки */
+  }
 }
- 
- .banner-img {
-   background: url("http://localhost:9000/images/banner/banner_img.jpg"), var(--color-silver);
-   background-repeat: no-repeat;
-   background-size: cover;
- }
 
- .banner-title {
-   font-size: calc(28px + (60 - 28) * ((100vw - 320px) / (1440 - 320)));
-   line-height: calc(35px + (77 - 35) * ((100vw - 320px) / (1440 - 320)));
- }
+@layer utilities {
+  .banner-img {
+    background: url("http://localhost:9000/images/banner/img-main.png"), #c4c4c4;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
- .banner-txt {
-   font-family: "Miama Nueva";
-   white-space: nowrap;
-   font-style: normal;
-   font-weight: normal;
-   font-size: calc(24px + (42 - 24) * ((100vw - 320px) / (1440 - 320)));
-   line-height: calc(40px + (100 - 40) * ((100vw - 320px) / (1440 - 320)));
-   position: absolute;
+  .banner-title {
+    font-size: calc(28px + (60 - 28) * ((100vw - 320px) / (1440 - 320)));
+    line-height: calc(35px + (77 - 35) * ((100vw - 320px) / (1440 - 320)));
+  }
 
- }
+  .banner-txt {
+    font-family: "Miama Nueva";
+    white-space: nowrap;
+    font-style: normal;
+    font-weight: normal;
+    font-size: calc(24px + (42 - 24) * ((100vw - 320px) / (1440 - 320)));
+    line-height: calc(40px + (100 - 40) * ((100vw - 320px) / (1440 - 320)));
+    position: absolute;
+  }
 
-
- .banner-link {
-   background: var(--color-withe);
-   border: 2px solid var(--color-green);
-   color: var(--color-black);
-   line-height: 24px;
-   transition-property: background-color, color;
-   transition: 0.3s;
-
-   
- }
-
- .banner-link:hover,
- .banner-link:active {
-   background-color: var(--color-green);
-   color: var(--color-withe);
- }
-
-/* Loader */
-.lds-roller {
+  /* Loader */
+  .lds-roller {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -98,7 +98,7 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #0c0;
+    background: #00cc00;
     margin: -4px 0 0 -4px;
   }
   .lds-roller div:nth-child(1) {

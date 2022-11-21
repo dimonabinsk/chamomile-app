@@ -34,14 +34,14 @@ const Pagination = ({
 
   return (
     <div className="flex justify-center">
-      <ul className="list-style-none flex">
+      <ul className="list-style-none flex font-miama">
         {/* Левая кнопка пагинации "Назад" */}
         <li className="hidden px-1 sm:block">
           <button
             className={`relative rounded border-0 bg-transparent py-1.5 px-3 outline-none transition-all duration-300 focus:shadow-none  ${
               currentPage === 1
-                ? "pointer-events-none text-gray-500"
-                : "text-[#1c1c1c] hover:bg-[#0d0] hover:text-white dark:text-white dark:hover:text-[#1c1c1c]"
+                ? "pointer-events-none text-gray-9"
+                : "text-graphite hover:bg-green-1 hover:text-main-white dark:text-main-white dark:hover:text-graphite"
             }`}
             onClick={onPrevious}
           >
@@ -54,7 +54,7 @@ const Pagination = ({
             return (
               <li
                 key={`page_${idx}`}
-                className="relative top-[6px] bg-transparent px-1 text-[#1c1c1c] dark:text-white"
+                className="relative top-[6px] bg-transparent px-1 text-graphite dark:text-main-white"
               >
                 &#8230;
               </li>
@@ -64,8 +64,8 @@ const Pagination = ({
           return (
             <li key={`page_${idx}`} className="px-1">
               <button
-                className={`relative rounded border-0 py-1.5 px-3 text-[#1c1c1c] outline-none transition-all duration-300 focus:shadow-none dark:text-white 2xl:hover:bg-[#0d0] 2xl:hover:text-white 2xl:dark:hover:text-[#1c1c1c] ${
-                  currentPage === pageNum ? "bg-[#0c0]" : ""
+                className={`relative rounded border-0 py-1.5 px-3 text-graphite outline-none transition-all duration-300 focus:shadow-none dark:text-main-white 2xl:hover:bg-green-1 2xl:hover:text-main-white 2xl:dark:hover:text-graphite ${
+                  currentPage === pageNum ? "bg-green-1" : ""
                 }`}
                 // to={"/#"}
                 onClick={() => onPageChange(pageNum)}
@@ -80,8 +80,8 @@ const Pagination = ({
           <button
             className={`relative rounded border-0 bg-transparent py-1.5 px-3 outline-none transition-all duration-300 focus:shadow-none  ${
               currentPage === lastPage
-                ? "pointer-events-none text-gray-500"
-                : "text-[#1c1c1c] hover:bg-[#0d0] hover:text-white dark:text-white dark:hover:text-[#1c1c1c]"
+                ? "pointer-events-none text-gray-9"
+                : "text-graphite hover:bg-green-1 hover:text-main-white dark:text-main-white dark:hover:text-graphite"
             }`}
             onClick={onNext}
           >

@@ -28,7 +28,7 @@ export default function NavBar() {
 
   return (
     <Navbar
-      className={` mx-auto max-w-screen-3xl border-none bg-gray-100 transition-all dark:bg-main-black dark:shadow-lg lg:top-5 lg:px-8 lg:py-4 lg:opacity-90`}
+      className={` mx-auto max-w-screen-3xl border-none bg-main-white transition-all dark:bg-main-black dark:shadow-lg lg:top-5 lg:px-8 lg:py-4 lg:opacity-90`}
     >
       <div className="container mx-auto flex items-center justify-between">
         {<Logo darkMode={isDarkMode} />}
@@ -37,50 +37,49 @@ export default function NavBar() {
           {<NavList />}
         </div>
         <div className=" flex flex-grow justify-around lg:w-20 lg:flex-grow-0 lg:justify-between">
-
-          <NavLink to={"/user"} exact>
+          <NavLink
+            to={"/user"}
+            className={
+              "cursor-pointer text-green-4 hover:text-green-2 dark:text-green-3 dark:hover:text-green-1"
+            }
+            exact
+          >
             <Tooltip
-            content="Личный кабинет"
-            animate={{
-              mount: { scale: 1, y: 0 },
-              unmount: { scale: 0, y: 25 },
-            }}
-            className={`bg-transparent font-bk-rt ${
-              !isDarkMode ? "text-green-300" : "text-green-100"
-            }`}
-          >
-            <FontAwesomeIcon
-              icon={faUser}
-              size="xl"
+              content="Личный кабинет"
+              animate={{
+                mount: { scale: 1, y: 0 },
+                unmount: { scale: 0, y: 25 },
+              }}
               className={
-                " cursor-pointer text-[#79a668] hover:scale-105 hover:text-[#00cc00]"
+                "bg-transparent font-bk-rt text-green-4 dark:text-green-1 "
               }
-            />
-          </Tooltip>
+            >
+              <FontAwesomeIcon icon={faUser} size="xl" />
+            </Tooltip>
           </NavLink>
-          
-          <div>
-           <Tooltip
-            content="Корзина"
-            animate={{
-              mount: { scale: 1, y: 0 },
-              unmount: { scale: 0, y: 25 },
-            }}
-            className={`bg-transparent font-bk-rt ${
-              !isDarkMode ? "text-green-300" : "text-green-100"
-            }`}
+
+          <NavLink
+            to={"/"}
+            className={
+              "cursor-pointer text-green-4  hover:text-green-2 dark:text-green-3 dark:hover:text-green-1"
+            }
           >
-            <FontAwesomeIcon
-              icon={faBagShopping}
-              size="xl"
+            <Tooltip
+              content="Корзина"
+              animate={{
+                mount: { scale: 1, y: 0 },
+                unmount: { scale: 0, y: 25 },
+              }}
               className={
-                " cursor-pointer text-[#79a668] hover:scale-105 hover:text-[#00cc00]"
+                "bg-transparent font-bk-rt text-green-4 dark:text-green-1 "
               }
-            />
-          </Tooltip>
-          <span className=" ml-2 text-green-100">0</span> 
-          </div>
-          
+            >
+              <FontAwesomeIcon icon={faBagShopping} size="xl" />
+            </Tooltip>
+            <span className="ml-2 text-green-4  dark:text-green-2">
+              0
+            </span>
+          </NavLink>
         </div>
 
         {

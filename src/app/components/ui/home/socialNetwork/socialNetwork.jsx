@@ -17,8 +17,8 @@ const SocialNetwork = ({ styles }) => {
             <FontAwesomeIcon
               icon={faTelegram}
               size="2x"
-              title="Telegram"
-              className=" transition-colors hover:text-blue-400"
+              title="Телеграмм"
+              className=" text-graphite transition-colors hover:text-blue-400 dark:text-main-white dark:hover:text-blue-400"
             />
           </Link>
         </li>
@@ -27,7 +27,8 @@ const SocialNetwork = ({ styles }) => {
             <FontAwesomeIcon
               icon={faSquareOdnoklassniki}
               size="2x"
-              className=" transition-colors hover:text-orange-400"
+              title="Одноклассники"
+              className=" text-graphite transition-colors hover:text-orange-400 dark:text-main-white dark:hover:text-orange-400"
             />
           </Link>
         </li>
@@ -36,7 +37,8 @@ const SocialNetwork = ({ styles }) => {
             <FontAwesomeIcon
               icon={faVk}
               size="2x"
-              className=" transition-colors hover:text-blue-500"
+              title="Вконтакте"
+              className=" text-graphite transition-colors hover:text-blue-500 dark:text-main-white dark:hover:text-blue-500"
             />
           </Link>
         </li>

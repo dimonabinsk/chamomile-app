@@ -27,10 +27,10 @@ const NavList = () => {
     },
   ];
   const classes =
-    "flex items-center border-b-2 border-b-transparent text-green-900 transition-all hover:border-b-green-600 hover:text-green-600  dark:text-green-600 dark:hover:border-b-green-300 dark:hover:text-green-300";
+    "flex items-center border-b-2 border-b-transparent text-green-4 transition-all hover:border-b-green-3 hover:text-green-3  dark:text-green-3 dark:hover:border-b-green-2 dark:hover:text-green-2";
 
   const activeClasses =
-    "text-green-600  dark:text-green-100 border-b-green-100 border-b-2";
+    "text-green-2  dark:text-green-1 dark:border-b-green-1 border-b-green-2 border-b-2";
 
 
   return (

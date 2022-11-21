@@ -34,7 +34,7 @@ const InputTextField = ({ title, control, name, type }) => {
                 type === "password" && (
                   <IconButton
                     variant="text"
-                    className="relative -top-[10px] -left-2 text-base text-green-600"
+                    className="relative -top-[10px] -left-2 text-base text-green-1"
                     onClick={toggleShowPassword}
                   >
                     <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />

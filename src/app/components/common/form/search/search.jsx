@@ -5,7 +5,7 @@ import { Input } from "@material-tailwind/react";
 const Search = () => {
   return (
     <div className=" mb-1">
-      <Input variant="outlined" label="Поиск..." color="green" className=" text-graphite dark:text-white-300" />
+      <Input variant="outlined" label="Поиск..." color="green" className=" text-graphite dark:text-main-white" />
     </div>
   );
 };

@@ -13,14 +13,14 @@ const Banner = () => {
       ></div>
       <div className="relative max-w-lg sm:top-[15vw]">
         <h3
-          className={`banner-title absolute whitespace-nowrap font-md-bt dark:text-white dark:mix-blend-difference sm:top-[-3vw]`}
+          className={`banner-title absolute whitespace-nowrap font-md-bt dark:text-main-white dark:mix-blend-difference sm:top-[-3vw]`}
         >
           Комнатные растения
         </h3>
-        <span className="banner-txt  top-[10vw] left-[30vw] text-[#00cc00] sm:top-[3vw] sm:left-[20vw]">
+        <span className="banner-txt  top-[10vw] left-[30vw] text-green-1 sm:top-[3vw] sm:left-[20vw]">
           с любовью...
         </span>
-        <p className="absolute top-[20vw] font-bk-rt leading-[24px] dark:text-white dark:mix-blend-difference sm:top-[15vw] lg:top-40">
+        <p className="absolute top-[20vw] font-bk-rt leading-[24px] dark:text-main-white dark:mix-blend-difference sm:top-[15vw] lg:top-40">
           Мы поможем вам подобрать лучшие растения для вашего помещения,
           оранжереи и сада, доставим их к вашей двери и поможем ухаживать за
           ними.
@@ -28,7 +28,7 @@ const Banner = () => {
         <div>
           <Link
             to="/catalog"
-            className="banner-link absolute top-56 m-0 rounded py-2 px-5 font-bk-rt focus:outline-none sm:top-64 sm:py-3 sm:px-8"
+            className="absolute top-56 m-0 rounded-lg border-2 border-green-1 bg-main-white py-2 px-5 font-bk-rt text-main-black transition hover:bg-green-1 hover:text-main-white focus:bg-green-1 focus:text-main-white focus:outline-none sm:top-64 sm:py-3 sm:px-8"
             role="button"
           >
             Просмотреть каталог

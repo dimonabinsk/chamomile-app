@@ -17,15 +17,20 @@ const GetCard = ({ src, alt, title, price, path }) => {
   return (
     <Card className="">
       <CardHeader color="blue-gray" className=" h-72">
-        <Link to={path}>
+        <Link
+          to={path}
+          className={
+            "after:absolute after:top-[80%]  after:left-[calc(50%-60px)] after:w-[120px]  after:cursor-pointer after:rounded-md after:bg-green-1 after:bg-opacity-70 after:p-1  after:text-center after:font-bk-rt after:text-lg after:text-main-white after:opacity-0 after:content-['подробнее...'] hover:after:opacity-100"
+          }
+        >
           <img
             src={src}
             alt={alt}
-            className="h-full w-full object-cover transition hover:scale-[1.1]"
+            className=" h-full w-full object-cover transition hover:scale-[1.05] "
           />
         </Link>
       </CardHeader>
-      <CardBody className=" h-40 overflow-auto text-center">
+      <CardBody className="scroll_card h-40 overflow-auto text-center">
         <Typography variant="h5" className="mb-2 font-miama">
           {title}
         </Typography>
