@@ -79,6 +79,25 @@
     line-height: calc(40px + (100 - 40) * ((100vw - 320px) / (1440 - 320)));
     position: absolute;
   }
+  /*link category*/
+
+  .live-plants {
+    background-image: url("http://localhost:9000/images/bg-link/live-plants.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .access {
+    background-image: url("http://localhost:9000/images/bg-link/pots-access.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x:90%;
+  }
+  .plant-care {
+    background-image: url("http://localhost:9000/images/bg-link/plant-care.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
   /* Loader */
   .lds-roller {

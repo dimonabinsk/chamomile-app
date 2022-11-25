@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 // import PropTypes from "prop-types";
 import { LoginFormCard, RegisterFormCard } from "../components/ui/userForm";
-import Link from "../components/ui/home/link/link";
 
 const User = () => {
   const { type } = useParams();
@@ -29,7 +28,6 @@ const User = () => {
             <RegisterFormCard onToggleForm={toggleFormType} />
           </>
         )}
-        <Link />
       </div>
     </>
   );

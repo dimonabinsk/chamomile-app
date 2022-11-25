@@ -1,5 +1,5 @@
 import Banner from "./banner/Banner";
 import SocialNetwork from "./socialNetwork/socialNetwork";
-import Link from "./link/link";
+import LinkCategory from "./linkCategory/linkCategory";
 
-export { Banner, SocialNetwork, Link };
+export { Banner, SocialNetwork, LinkCategory };
