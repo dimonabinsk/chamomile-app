@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 // import { useParams } from "react-router-dom";
 import axios from "axios";
 import { GetCard, Loader, Pagination } from "../common";
-import { Button } from "@material-tailwind/react";
+import { Button, Typography } from "@material-tailwind/react";
 
 const CatalogPage = () => {
   const [catalog, setCatalog] = useState([]);
@@ -64,20 +64,20 @@ const CatalogPage = () => {
       catalogGroup && (
         <>
           {" "}
-          <section className=" mt-32 mb-10 px-4 lg:px-8">
-            <h2 className=" font-bk-bt text-graphite dark:text-main-white">
+          <Typography as="section" className=" mt-32 mb-10 px-4 lg:px-8">
+            <Typography variant="h2" className=" font-bk-bt text-graphite dark:text-main-white">
               Цветы
-            </h2>
+            </Typography>
             <Button onClick={() => handleSelectedGroup("Красивоцветущие")}>
               Фильтр по группам растений
             </Button>{" "}
             <Button onClick={() => handleSelectedMethod("Оранжерея")}>
               Фильтр по методу выращивания
             </Button>
-            <div className=" grid  w-full grid-cols-1 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4 lg:gap-4">
+            <Typography as="div" className=" grid  w-full grid-cols-1 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4 lg:gap-4">
               {catalogGroup.map((item) => {
                 return (
-                  <div key={`${item.id}_${item.name}`} className="my-8">
+                  <Typography as="div" key={`${item.id}_${item.name}`} className="my-8">
                     <GetCard
                       path={`/catalog/${item.id}`}
                       src={`${item.images[0]}`}
@@ -85,11 +85,11 @@ const CatalogPage = () => {
                       price={item.price}
                       title={item.name}
                     />
-                  </div>
+                  </Typography>
                 );
               })}
-            </div>
-          </section>
+            </Typography>
+          </Typography>
           <Pagination
             totalCount={count}
             currentPage={currentPage}

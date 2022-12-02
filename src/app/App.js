@@ -1,3 +1,4 @@
+import { Typography } from "@material-tailwind/react";
 import { useState, useEffect } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
@@ -22,13 +23,13 @@ function App() {
   }, [fixedHeader, lastScrollTop, scrollDistance]);
   return (
     <>
-      <div
+      <Typography
+        as="div"
         className={`relative ${
           fixedHeader ? "top-[70px] lg:top-[107px]" : "top-0"
         }`}
       >
         <Header fixed={fixedHeader} />
-
         <Switch>
           <Route path="/accessories" component={Accessories} />
           <Route path="/plantcare" component={PlantCare} />
@@ -39,7 +40,7 @@ function App() {
           <Route path="/" component={Home} />
           <Redirect to="/" />
         </Switch>
-      </div>
+      </Typography>
     </>
   );
 }
