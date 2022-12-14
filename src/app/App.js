@@ -2,6 +2,9 @@ import { Typography } from "@material-tailwind/react";
 import { useState, useEffect } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Header from "./components/ui/header";
 import { Accessories, Blog, Catalog, Home, PlantCare, User } from "./layouts";
 
@@ -9,6 +12,8 @@ function App() {
   const [fixedHeader, setFixedHeader] = useState(false);
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [scrollDistance, setScrollDistance] = useState(0);
+
+  const notify = () => toast("Wow so easy!");
 
   useEffect(() => {
     window.onscroll = () => {
@@ -41,6 +46,10 @@ function App() {
           <Redirect to="/" />
         </Switch>
       </Typography>
+      <div>
+        <button onClick={notify}>Notify!</button>
+        <ToastContainer />
+      </div>
     </>
   );
 }

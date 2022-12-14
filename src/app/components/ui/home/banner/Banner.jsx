@@ -16,7 +16,7 @@ const Banner = () => {
       </Typography>
       <Typography
         as="div"
-        className={`banner-img absolute top-[200px] right-0 h-[80vw] w-[80vw] rounded-lg sm:top-0 sm:right-auto sm:left-[20vw] sm:h-[50vw] sm:w-[70vw] lg:h-[40vw] `}
+        className={`banner-img bg-banner absolute top-[200px] right-0 h-[80vw] w-[80vw] rounded-lg sm:top-0 sm:right-auto sm:left-[20vw] sm:h-[50vw] sm:w-[70vw] lg:h-[40vw] `}
       ></Typography>
       <Typography as="div" className="relative max-w-lg sm:top-[15vw]">
         <Typography

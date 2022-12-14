@@ -1,26 +1,20 @@
 import React, { useState, useEffect } from "react";
 // import PropTypes from "prop-types";
 // import { useParams } from "react-router-dom";
-import axios from "axios";
+
 import { GetCard, Loader, Pagination } from "../common";
 import { Button, Typography } from "@material-tailwind/react";
+import { useCatalog } from "../../hooks/useCatalog";
 
 const CatalogPage = () => {
-  const [catalog, setCatalog] = useState([]);
   const [isSelectedGroup, setSelectedGroup] = useState("");
   const [isSelectedMethod, setSelectedMethod] = useState("");
+
+  const { catalog } = useCatalog();
 
   const PageSize = 8;
   const [currentPage, setCurrentPage] = useState(1);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:9000/catalog")
-      .then((response) => {
-        setCatalog(response.data);
-      })
-      .catch((error) => console.error(error));
-  }, []);
 
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex);
@@ -55,8 +49,8 @@ const CatalogPage = () => {
           );
         })
       : filterGroup;
-     
-      // console.log(filterMethod);
+
+    // console.log(filterMethod);
 
     const count = filterMethod.length;
     const catalogGroup = filterMethod.slice(firstPageIndex, lastPageIndex);
@@ -65,7 +59,10 @@ const CatalogPage = () => {
         <>
           {" "}
           <Typography as="section" className=" mt-32 mb-10 px-4 lg:px-8">
-            <Typography variant="h2" className=" font-bk-bt text-graphite dark:text-main-white">
+            <Typography
+              variant="h2"
+              className=" font-bk-bt text-graphite dark:text-main-white"
+            >
               Цветы
             </Typography>
             <Button onClick={() => handleSelectedGroup("Красивоцветущие")}>
@@ -74,13 +71,21 @@ const CatalogPage = () => {
             <Button onClick={() => handleSelectedMethod("Оранжерея")}>
               Фильтр по методу выращивания
             </Button>
-            <Typography as="div" className=" grid  w-full grid-cols-1 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4 lg:gap-4">
+            <Typography
+              as="div"
+              className=" grid  w-full grid-cols-1 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4 lg:gap-4"
+            >
               {catalogGroup.map((item) => {
+                // console.log(item);
                 return (
-                  <Typography as="div" key={`${item.id}_${item.name}`} className="my-8">
+                  <Typography
+                    as="div"
+                    key={item._id}
+                    className="my-8"
+                  >
                     <GetCard
-                      path={`/catalog/${item.id}`}
-                      src={`${item.images[0]}`}
+                      path={`/catalog/${item._id}`}
+                      src={`${item.images}`}
                       alt={item.name}
                       price={item.price}
                       title={item.name}

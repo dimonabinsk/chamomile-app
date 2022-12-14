@@ -1,11 +1,14 @@
 import React from "react";
 import { CatalogPage } from "../components/pages";
+import CatalogProvider from "../hooks/useCatalog";
 // import PropTypes from "prop-types";
 
 const Catalog = () => {
-    return (
-       <CatalogPage />
-    );
+  return (
+    <CatalogProvider>
+      <CatalogPage />
+    </CatalogProvider>
+  );
 };
 
 // Catalog.propTypes = {};

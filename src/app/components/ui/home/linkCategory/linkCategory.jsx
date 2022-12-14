@@ -22,7 +22,7 @@ const LinkCategory = () => {
       <Typography as="div" className=" grid grid-cols-1 gap-5 lg:grid-cols-2">
         <Typography
           as="div"
-          className="live-plants h-[289px] w-full overflow-hidden  rounded-lg text-center sm:h-[524px] "
+          className="live-plants h-[289px] w-full overflow-hidden rounded-lg  bg-live text-center sm:h-[524px] "
         >
           <Typography
             as={Link}
@@ -37,7 +37,7 @@ const LinkCategory = () => {
         <Typography as="div" className="grid  w-full gap-5">
           <Typography
             as="div"
-            className=" access h-[289px] overflow-hidden rounded-lg text-center sm:h-[252px]"
+            className=" access  h-[289px]  overflow-hidden rounded-lg bg-pots text-center sm:h-[252px]"
           >
             <Typography
               as={Link}
@@ -57,7 +57,7 @@ const LinkCategory = () => {
           </Typography>
           <Typography
             as="div"
-            className=" plant-care h-[289px]  overflow-hidden rounded-lg text-center sm:h-[252px]"
+            className=" plant-care h-[289px] overflow-hidden rounded-lg bg-plant text-center sm:h-[252px]"
           >
             <Typography
               as={Link}

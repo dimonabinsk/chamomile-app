@@ -30,6 +30,12 @@ module.exports = withMT({
     },
 
     extend: {
+      backgroundImage: {
+        'banner': "url('/images/banner/banner_img.jpg')",
+        'live': "url('/images/bg-link/live-plants.jpg')",
+        'plant': "url('/images/bg-link/plant-care.jpg')",
+        'pots': "url('/images/bg-link/pots-access.jpg')",
+      },
       screens: {
         "3xl": "1600px",
         "4xl": "1900px",

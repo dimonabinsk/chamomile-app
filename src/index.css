@@ -60,7 +60,6 @@
 
 @layer utilities {
   .banner-img {
-    background: url("http://localhost:9000/images/banner/img-main.png"), #c4c4c4;
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -82,19 +81,16 @@
   /*link category*/
 
   .live-plants {
-    background-image: url("http://localhost:9000/images/bg-link/live-plants.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
 
   .access {
-    background-image: url("http://localhost:9000/images/bg-link/pots-access.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x:90%;
   }
   .plant-care {
-    background-image: url("http://localhost:9000/images/bg-link/plant-care.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }

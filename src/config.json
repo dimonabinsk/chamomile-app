@@ -1,0 +1,4 @@
+{
+    "API_BASE_URL": "https://the-chamomile-app-default-rtdb.europe-west1.firebasedatabase.app/",
+    "isFireBase": true
+}
