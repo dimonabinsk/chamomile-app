@@ -10,7 +10,7 @@
             "family": "Вересковые",
             "name": "Азалия",
             "images": [
-                "http://localhost:9000/images/catalog/azalea-1.jpg"
+                "/images/catalog/azalea-1.jpg"
             ],
             "price": 100
         },
@@ -26,7 +26,7 @@
             "family": "Кутровые",
             "name": "Алламанда",
             "images": [
-                "http://localhost:9000/images/catalog/allamanda-1.jpg"
+                "/images/catalog/allamanda-1.jpg"
             ],
             "price": 100
         },
@@ -40,7 +40,7 @@
             "family": "Алоэ",
             "name": "Алоэ Вера",
             "images": [
-                "http://localhost:9000/images/catalog/aloe-vera-1.jpg"
+                "/images/catalog/aloe-vera-1.jpg"
             ],
             "price": 100
         },
@@ -55,7 +55,7 @@
             "family": "Спаржевые",
             "name": "Сансевиерия",
             "images": [
-                "http://localhost:9000/images/catalog/snake-1.jpg"
+                "/images/catalog/snake-1.jpg"
             ],
             "price": 100
         },
@@ -70,7 +70,7 @@
             "family": "Ароидные",
             "name": "Монстера",
             "images": [
-                "http://localhost:9000/images/catalog/monstera-1.jpg"
+                "/images/catalog/monstera-1.jpg"
             ],
             "price": 100
         },
@@ -85,7 +85,7 @@
             "family": "Стрелициевые",
             "name": "Стрелиция Николая",
             "images": [
-                "http://localhost:9000/images/catalog/strelitzia-nicolai-1.jpg"
+                "/images/catalog/strelitzia-nicolai-1.jpg"
             ],
             "price": 100
         },
@@ -99,7 +99,7 @@
             "family": "Ароидные",
             "name": "Замиокулькас ( Долларовое дерево )",
             "images": [
-                "http://localhost:9000/images/catalog/zamioculcas-1.jpg"
+                "/images/catalog/zamioculcas-1.jpg"
             ],
             "price": 100
         },
@@ -113,7 +113,7 @@
             "family": "Кактусовые",
             "name": "Айлостера",
             "images": [
-                "http://localhost:9000/images/catalog/aylostera-1.jpg"
+                "/images/catalog/aylostera-1.jpg"
             ],
             "price": 100
         },
@@ -127,7 +127,7 @@
             "family": "Кактусовые",
             "name": "Ариокарпус",
             "images": [
-                "http://localhost:9000/images/catalog/ariocarpus-1.jpg"
+                "/images/catalog/ariocarpus-1.jpg"
             ],
             "price": 100
         },
@@ -141,7 +141,7 @@
             "family": "Адиантумы",
             "name": "Венерин волос",
             "images": [
-                "http://localhost:9000/images/catalog/adiantum-venerin-volos-1.jpg"
+                "/images/catalog/adiantum-venerin-volos-1.jpg"
             ],
             "price": 100
         },
@@ -155,7 +155,7 @@
             "family": "Даваллиевые",
             "name": "Фиджийская даваллия",
             "images": [
-                "http://localhost:9000/images/catalog/fijian-davallia-1.jpg"
+                "/images/catalog/fijian-davallia-1.jpg"
             ],
             "price": 100
         },
@@ -169,7 +169,7 @@
             "family": "Мареновые",
             "name": "Нертера ( Коралловая ягода )",
             "images": [
-                "http://localhost:9000/images/catalog/nertera_granadensis-1.jpg"
+                "/images/catalog/nertera_granadensis-1.jpg"
             ],
             "price": 100
         },
@@ -183,7 +183,7 @@
             "family": "Спаржевые",
             "name": "Перистый аспарагус",
             "images": [
-                "http://localhost:9000/images/catalog/feathery_asparagus-1.jpg"
+                "/images/catalog/feathery_asparagus-1.jpg"
             ],
             "price": 100
         },
@@ -199,7 +199,7 @@
             "family": "Мальтовые",
             "name": "Гибискус болотный",
             "images": [
-                "http://localhost:9000/images/catalog/hibiscus_marsh-1.jpg"
+                "/images/catalog/hibiscus_marsh-1.jpg"
             ],
             "price": 100
         },
@@ -215,7 +215,7 @@
             "family": "Жасмин самбак",
             "name": "Красавица Индии",
             "images": [
-                "http://localhost:9000/images/catalog/beauty-india-1.jpg"
+                "/images/catalog/beauty-india-1.jpg"
             ],
             "price": 100
         },
@@ -230,7 +230,7 @@
             "family": "Декоративные камелии",
             "name": "Камелия японская",
             "images": [
-                "http://localhost:9000/images/catalog/japanese-camellia-1.jpg"
+                "/images/catalog/japanese-camellia-1.jpg"
             ],
             "price": 100
         },
@@ -245,7 +245,7 @@
             "family": "Бильбергия",
             "name": "Бильбергия поникающая",
             "images": [
-                "http://localhost:9000/images/catalog/bilbergiya-ponikshaya-1.jpg"
+                "/images/catalog/bilbergiya-ponikshaya-1.jpg"
             ],
             "price": 100
         },
@@ -261,7 +261,7 @@
             "family": "Криптантус",
             "name": "Криптантус Бесстебельный",
             "images": [
-                "http://localhost:9000/images/catalog/cryptanthus-stemless-1.jpg"
+                "/images/catalog/cryptanthus-stemless-1.jpg"
             ],
             "price": 100
         },
@@ -276,7 +276,7 @@
             "family": "Гиацинт",
             "name": "Гиацинт Вудсток",
             "images": [
-                "http://localhost:9000/images/catalog/hyacinth-woodstock-1.jpg"
+                "/images/catalog/hyacinth-woodstock-1.jpg"
             ],
             "price": 100
         },
@@ -291,7 +291,7 @@
             "family": "Лилия",
             "name": "Лилия Апполо",
             "images": [
-                "http://localhost:9000/images/catalog/lily-appolo-1.jpg"
+                "/images/catalog/lily-appolo-1.jpg"
             ],
             "price": 100
         }

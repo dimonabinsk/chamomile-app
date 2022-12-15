@@ -47,7 +47,7 @@ http.interceptors.response.use(
     if (!isExpectedError) {
       console.log(e);
       toast.error(
-        "An unexpected error has occurred, please try to change it later"
+        "Произошла непредвиденная ошибка, пожалуйста, попробуйте зайти позже"
       );
       // Например вывести ошибку пользователю
       // alert(e);

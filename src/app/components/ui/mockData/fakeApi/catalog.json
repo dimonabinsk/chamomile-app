@@ -1,0 +1,297 @@
+[
+    {
+        "_id": "326f5b0f7d35892751572411f728e134",
+        "method": [
+            "Комнатные цветы"
+        ],
+        "group": "Красивоцветущие",
+        "genus": "Рододендроны",
+        "family": "Вересковые",
+        "name": "Азалия",
+        "images": [
+            "/images/catalog/azalea-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "527f635bf0b7c82c24f20e0b26034961",
+        "method": [
+            "Комнатные цветы",
+            "Оранжерея",
+            "Садовые цветы"
+        ],
+        "group": "Красивоцветущие",
+        "genus": "Лиана",
+        "family": "Кутровые",
+        "name": "Алламанда",
+        "images": [
+            "/images/catalog/allamanda-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "f98838e9a7cfba2079bd0b7436ce2696",
+        "method": [
+            "Комнатные цветы"
+        ],
+        "group": "Кактусы и суккуленты",
+        "genus": "Суккуленты",
+        "family": "Алоэ",
+        "name": "Алоэ Вера",
+        "images": [
+            "/images/catalog/aloe-vera-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "5ce089a852a0c5a43f6483fdd635d84d",
+        "method": [
+            "Комнатные цветы",
+            "Оранжерея"
+        ],
+        "group": "Декоративно-лиственные",
+        "genus": "Сансевиерия",
+        "family": "Спаржевые",
+        "name": "Сансевиерия",
+        "images": [
+            "/images/catalog/snake-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "12754e74e08c6e3a7ced329a477dcb13",
+        "method": [
+            "Комнатные цветы",
+            "Оранжерея"
+        ],
+        "group": "Декоративно-лиственные",
+        "genus": "Лиана",
+        "family": "Ароидные",
+        "name": "Монстера",
+        "images": [
+            "/images/catalog/monstera-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "5cd3148d5878b5fd2d3d702a1ca307bd",
+        "method": [
+            "Оранжерея",
+            "Садовые цветы"
+        ],
+        "group": "Декоративно-лиственные",
+        "genus": "Древесные",
+        "family": "Стрелициевые",
+        "name": "Стрелиция Николая",
+        "images": [
+            "/images/catalog/strelitzia-nicolai-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "24c585ff15a3599c16a7b315ffd96e7a",
+        "method": [
+            "Комнатные цветы"
+        ],
+        "group": "Кактусы и суккуленты",
+        "genus": "Суккуленты",
+        "family": "Ароидные",
+        "name": "Замиокулькас ( Долларовое дерево )",
+        "images": [
+            "/images/catalog/zamioculcas-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "cbc71e14c0bea9633644a4d929e4618f",
+        "method": [
+            "Комнатные цветы"
+        ],
+        "group": "Кактусы и суккуленты",
+        "genus": "Кактусовые",
+        "family": "Кактусовые",
+        "name": "Айлостера",
+        "images": [
+            "/images/catalog/aylostera-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "bb638d86f08f65edcf0c2d9a911ccb1b",
+        "method": [
+            "Комнатные цветы"
+        ],
+        "group": "Кактусы и суккуленты",
+        "genus": "Кактусовые",
+        "family": "Кактусовые",
+        "name": "Ариокарпус",
+        "images": [
+            "/images/catalog/ariocarpus-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "aa80c1ecec17c5fbf725b640eec1481c",
+        "method": [
+            "Комнатные цветы"
+        ],
+        "group": "Папоротники",
+        "genus": "Папоротники",
+        "family": "Адиантумы",
+        "name": "Венерин волос",
+        "images": [
+            "/images/catalog/adiantum-venerin-volos-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "7992175ad5d36ae3527c002beaa09eaf",
+        "method": [
+            "Комнатные цветы"
+        ],
+        "group": "Папоротники",
+        "genus": "Папоротники",
+        "family": "Даваллиевые",
+        "name": "Фиджийская даваллия",
+        "images": [
+            "/images/catalog/fijian-davallia-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "b9755dbd3abe11f488a86be6383ce0fd",
+        "method": [
+            "Комнатные цветы"
+        ],
+        "group": "Плодово-ягодные",
+        "genus": "Цветковые растения",
+        "family": "Мареновые",
+        "name": "Нертера ( Коралловая ягода )",
+        "images": [
+            "/images/catalog/nertera_granadensis-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "5095bce6324744db88cfb6a45354a12a",
+        "method": [
+            "Комнатные цветы"
+        ],
+        "group": "Декоративно-лиственные",
+        "genus": "Травянистые",
+        "family": "Спаржевые",
+        "name": "Перистый аспарагус",
+        "images": [
+            "/images/catalog/feathery_asparagus-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "3eb391631619fc2f47cff6c9c8bed71a",
+        "method": [
+            "Комнатные цветы",
+            "Оранжерея",
+            "Садовые цветы"
+        ],
+        "group": "Красивоцветущие",
+        "genus": "Кустарник",
+        "family": "Мальтовые",
+        "name": "Гибискус болотный",
+        "images": [
+            "/images/catalog/hibiscus_marsh-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "b429d0ca0464c1be9a1d378bc7570ba5",
+        "method": [
+            "Комнатные цветы",
+            "Оранжерея",
+            "Садовые цветы"
+        ],
+        "group": "Красивоцветущие",
+        "genus": "Кустарник",
+        "family": "Жасмин самбак",
+        "name": "Красавица Индии",
+        "images": [
+            "/images/catalog/beauty-india-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "2a535624738f96ed5aeb5ecda1b00a0a",
+        "method": [
+            "Оранжерея",
+            "Садовые цветы"
+        ],
+        "group": "Красивоцветущие",
+        "genus": "Камелия",
+        "family": "Декоративные камелии",
+        "name": "Камелия японская",
+        "images": [
+            "/images/catalog/japanese-camellia-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "15239b7445d9dec7da0e9acae1c1b620",
+        "method": [
+            "Оранжерея",
+            "Садовые цветы"
+        ],
+        "group": "Бромелиевые",
+        "genus": "Вечно зеленные",
+        "family": "Бильбергия",
+        "name": "Бильбергия поникающая",
+        "images": [
+            "/images/catalog/bilbergiya-ponikshaya-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "3b94a7542a9f6460e8b5849187e18f4e",
+        "method": [
+            "Комнатные цветы",
+            "Оранжерея",
+            "Садовые цветы"
+        ],
+        "group": "Бромелиевые",
+        "genus": "Вечно зеленные",
+        "family": "Криптантус",
+        "name": "Криптантус Бесстебельный",
+        "images": [
+            "/images/catalog/cryptanthus-stemless-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "942344ee4d77a0a2128b3f4d09d210ef",
+        "method": [
+            "Оранжерея",
+            "Садовые цветы"
+        ],
+        "group": "Луковичные",
+        "genus": "Луковичный цветок",
+        "family": "Гиацинт",
+        "name": "Гиацинт Вудсток",
+        "images": [
+            "/images/catalog/hyacinth-woodstock-1.jpg"
+        ],
+        "price": 100
+    },
+    {
+        "_id": "90f47e97221e98f4f1add9f282abd2e7",
+        "method": [
+            "Оранжерея",
+            "Садовые цветы"
+        ],
+        "group": "Луковичные",
+        "genus": "Белоснежные гибриды",
+        "family": "Лилия",
+        "name": "Лилия Апполо",
+        "images": [
+            "/images/catalog/lily-appolo-1.jpg"
+        ],
+        "price": 100
+    }
+]

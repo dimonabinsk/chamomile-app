@@ -19,6 +19,10 @@ export default function NavBar() {
     isDarkMode ? setDarkMode() : setDarkMode();
   };
 
+  const handleOpenNav = () => {
+    setOpenNav((prev) => !prev);
+  }
+
   useEffect(() => {
     window.addEventListener(
       "resize",
@@ -90,10 +94,10 @@ export default function NavBar() {
           />
         }
 
-        {<OpenNavBtn open={openNav} onOpen={() => setOpenNav(!openNav)} />}
+        {<OpenNavBtn open={openNav} onOpen={handleOpenNav} />}
       </div>
       <MobileNav open={openNav}>
-        {<NavList />}
+        {<NavList onOpen={handleOpenNav}/>}
         {<Search />}
         <div className="ml-0">
           {

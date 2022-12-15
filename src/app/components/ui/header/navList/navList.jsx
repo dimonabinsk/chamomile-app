@@ -1,9 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { Typography } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
-// import PropTypes from "prop-types";
 
-const NavList = () => {
+
+const NavList = ({onOpen}) => {
   const linkList = [
     {
       id: 1,
@@ -24,6 +26,11 @@ const NavList = () => {
       id: 4,
       name: "Блог",
       path: "/blog",
+    },
+    {
+      id: 5,
+      name: "Загрузка",
+      path: "/loading",
     },
   ];
   const classes =
@@ -46,6 +53,7 @@ const NavList = () => {
             to={path}
             className={classes}
             activeClassName={activeClasses}
+            onClick={onOpen}
           >
             {name}
           </NavLink>
@@ -55,6 +63,8 @@ const NavList = () => {
   );
 };
 //
-NavList.propTypes = {};
+NavList.propTypes = {
+  onOpen: PropTypes.func
+};
 
 export default NavList;
