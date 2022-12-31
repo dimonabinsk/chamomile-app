@@ -9,14 +9,14 @@ const Banner = () => {
   return (
     <Typography
       as="section"
-      className="relative top-16 left-0 right-0 z-10 max-w-screen-3xl px-4 sm:px-5 lg:top-52"
+      className="relative left-0 right-0 z-10 px-4 top-16 max-w-screen-3xl sm:px-5 lg:top-52"
     >
       <Typography variant="h2" className="sr-only" aria-label="Баннер">
         Баннер
       </Typography>
       <Typography
         as="div"
-        className={`banner-img bg-banner absolute top-[200px] right-0 h-[80vw] w-[80vw] rounded-lg sm:top-0 sm:right-auto sm:left-[20vw] sm:h-[50vw] sm:w-[70vw] lg:h-[40vw] `}
+        className={`banner-img bg-banner absolute top-[200px] right-0 h-[80vw] w-[80vw] rounded-lg sm:top-0 sm:right-auto sm:left-[20vw] sm:h-[50vw] sm:w-[70vw] lg:h-[40vw]`}
       ></Typography>
       <Typography as="div" className="relative max-w-lg sm:top-[15vw]">
         <Typography
@@ -40,7 +40,7 @@ const Banner = () => {
           <Typography
             as={Link}
             to="/catalog"
-            className="absolute top-56 m-0 rounded-lg border-2 border-green-1 bg-main-white py-2 px-5 font-bk-rt text-main-black transition hover:bg-green-1 hover:text-main-white focus:bg-green-1 focus:text-main-white focus:outline-none sm:top-64 sm:py-3 sm:px-8"
+            className="absolute px-5 py-2 m-0 transition border-2 rounded-lg top-56 border-green-1 bg-main-white font-bk-rt text-main-black hover:bg-green-1 hover:text-main-white focus:bg-green-1 focus:text-main-white focus:outline-none sm:top-64 sm:py-3 sm:px-8"
             role="button"
           >
             Просмотреть каталог

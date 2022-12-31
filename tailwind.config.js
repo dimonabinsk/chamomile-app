@@ -22,19 +22,16 @@ module.exports = withMT({
       "green-2": "#79a668",
       "green-3": "#608951",
       "green-4": "#4E7440",
-      
-      
-      
       gold: "#ffd700",
       sun: "#ff8c00",
     },
 
     extend: {
       backgroundImage: {
-        'banner': "url('/images/banner/banner_img.jpg')",
-        'live': "url('/images/bg-link/live-plants.jpg')",
-        'plant': "url('/images/bg-link/plant-care.jpg')",
-        'pots': "url('/images/bg-link/pots-access.jpg')",
+        banner: "url('/images/banner/banner_img.jpg')",
+        live: "url('/images/bg-link/live-plants.jpg')",
+        plant: "url('/images/bg-link/plant-care.jpg')",
+        pots: "url('/images/bg-link/pots-access.jpg')",
       },
       screens: {
         "3xl": "1600px",
