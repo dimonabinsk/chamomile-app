@@ -8,4 +8,7 @@ router.use("/auth", require("./auth.routes"));
 // /api/user
 router.use("/user", require("./user.routes"));
 
+// /api/catalog
+router.use("/catalog", require("./catalog.routes"));
+
 module.exports = router;
