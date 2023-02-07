@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 const schema = new Schema(
   {
     name: String,
-    surname:String,
+    surname: String,
     email: {
       type: String,
       required: true,
@@ -11,10 +11,11 @@ const schema = new Schema(
     },
     password: String,
     image: String,
-    sex: {
-      type: String,
-      enum: ["male", "female"],
-    },
+    login: String,
+    basket: [],
+    buy: [],
+    license: Boolean,
+    staySystem: Boolean
   },
 
   {

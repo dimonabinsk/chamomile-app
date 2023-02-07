@@ -1,40 +1,36 @@
-import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
-// import PropTypes from "prop-types";
-import { LoginFormCard, RegisterFormCard } from "../components/ui/userForm";
+import React from "react";
+import { useSelector } from "react-redux";
+import { useParams, Redirect } from "react-router-dom";
+import { EditUserPage, UserPage } from "../components/pages";
 
+import { UsersLoader } from "../components/ui/hoc";
+
+
+import { getCurrentUserId } from "../store/users";
 const User = () => {
-  const { type } = useParams();
-  const history = useHistory();
-  const [typeForm, setTypeForm] = useState(
-    type === "register" ? type : "login"
-  );
-  useEffect(() => {
-    history.push(`/user/${typeForm}`);
-  }, [history, typeForm]);
+    const params = useParams();
+    const { userId, edit } = params;
+    const currentUserId = useSelector(getCurrentUserId());
 
-  const toggleFormType = () => {
-    setTypeForm((prev) => (prev === "register" ? "login" : "register"));
-  };
-  return (
-    <>
-      <div className="relative top-[63px] mx-4 flex flex-col items-center lg:top-[100px] lg:mx-8">
-        {typeForm === "login" ? (
-          <>
-            <LoginFormCard onToggleForm={toggleFormType} />
-          </>
-        ) : (
-          <>
-            <RegisterFormCard onToggleForm={toggleFormType} />
-          </>
-        )}
-      </div>
-    </>
-  );
+    return (
+        <>
+            <UsersLoader>
+                {userId ? (
+                    edit ? (
+                        userId === currentUserId ? (
+                            <EditUserPage />
+                        ) : (
+                            <Redirect to={`/user/${currentUserId}/edit`} />
+                        )
+                    ) : (
+                        <UserPage userId={userId} />
+                    )
+                ) : (
+                    <Redirect to={"/"} />
+                )}
+            </UsersLoader>
+        </>
+    );
 };
-
-// User.propTypes = {
-//   fixed: PropTypes.bool,
-// };
 
 export default User;

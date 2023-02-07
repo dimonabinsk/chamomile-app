@@ -1,10 +1,11 @@
 import React from "react";
+import { Typography } from "@material-tailwind/react";
 
 
 const Blog = () => {
   return (
     <>
-      <h1 className={"mt-28"}>Блог</h1>
+      <Typography variant="h1" className={"mt-28"}>Блог</Typography>
     </>
   );
 };

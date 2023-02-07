@@ -35,9 +35,9 @@ const ChangeThemeBtn = ({ onChangeTheme, darkMode, classes }) => {
 };
 
 ChangeThemeBtn.propTypes = {
-  onChangeTheme: PropTypes.func.isRequired,
-  darkMode: PropTypes.bool.isRequired,
-  classes: PropTypes.string.isRequired,
+  onChangeTheme: PropTypes.func,
+  darkMode: PropTypes.bool,
+  classes: PropTypes.string,
 };
 
 export default ChangeThemeBtn;

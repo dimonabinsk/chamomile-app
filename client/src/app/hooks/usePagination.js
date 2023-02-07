@@ -5,8 +5,8 @@ const DOTS = "...";
 
 const range = (start, end) => {
   let length = end - start + 1;
-  /*Создайте массив определенной длины и установите элементы 
-       внутри него из начальное значение к конечному значению 
+  /*Создайте массив определенной длины и установите элементы
+       внутри него из начальное значение к конечному значению
   */
 
   return Array.from({ length }, (_, idx) => idx + start);
@@ -82,10 +82,10 @@ const usePagination = ({ totalCount, pageSize, siblingCount, currentPage }) => {
 };
 
 usePagination.propTypes = {
-  totalCount: PropTypes.number.isRequired,
-  pageSize: PropTypes.number.isRequired,
+  totalCount: PropTypes.number,
+  pageSize: PropTypes.number,
   siblingCount: PropTypes.number,
-  currentPage: PropTypes.number.isRequired,
+  currentPage: PropTypes.number,
 };
 
 usePagination.defaultProps = {

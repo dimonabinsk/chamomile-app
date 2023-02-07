@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Typography } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
 
 
@@ -27,11 +26,6 @@ const NavList = ({onOpen}) => {
       name: "Блог",
       path: "/blog",
     },
-    {
-      id: 5,
-      name: "Загрузка",
-      path: "/loading",
-    },
   ];
   const classes =
     "flex items-center border-b-2 border-b-transparent text-green-4 transition-all hover:border-b-green-3 hover:text-green-3  dark:text-green-3 dark:hover:border-b-green-2 dark:hover:text-green-2";
@@ -43,9 +37,8 @@ const NavList = ({onOpen}) => {
   return (
     <ul className={"mb-4 mt-2 inline-flex flex-col gap-2 lg:flex lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6"}>
       {linkList.map(({ id, name, path }) => (
-        <Typography
+        <li
           key={id}
-          as="li"
           variant="small"
           className={" py-1 font-bk-bt tracking-wider "}
         >
@@ -57,7 +50,7 @@ const NavList = ({onOpen}) => {
           >
             {name}
           </NavLink>
-        </Typography>
+        </li>
       ))}
     </ul>
   );

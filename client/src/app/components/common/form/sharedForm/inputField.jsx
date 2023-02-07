@@ -5,7 +5,7 @@ import { IconButton, Input } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
-const InputTextField = ({ title, control, name, type }) => {
+const InputField = ({ title, control, name, type, register }) => {
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => {
     setShowPassword((prev) => !prev);
@@ -13,15 +13,13 @@ const InputTextField = ({ title, control, name, type }) => {
   return (
     <>
       <Controller
-        name={name}
-        control={control}
         render={({
           field: { onChange, value = "" },
           fieldState: { error },
         }) => (
           <>
             <Input
-              className="font-bk-rt text-xl tracking-wider"
+              className="text-xl tracking-wider font-bk-rt"
               variant="outlined"
               label={title}
               type={showPassword ? "text" : type}
@@ -30,6 +28,7 @@ const InputTextField = ({ title, control, name, type }) => {
               id={name}
               name={name}
               color="green"
+              register={register}
               icon={
                 type === "password" && (
                   <IconButton
@@ -42,7 +41,7 @@ const InputTextField = ({ title, control, name, type }) => {
                 )
               }
             />
-            <div className=" mt-1 h-6">
+            <div className="h-6 mt-1 ">
               {error && (
                 <small id={name} className={`mt-1 block text-xs text-red-800`}>
                   {error?.message}
@@ -51,16 +50,19 @@ const InputTextField = ({ title, control, name, type }) => {
             </div>
           </>
         )}
+        name={name}
+        control={control}
       />
     </>
   );
 };
 
-InputTextField.propTypes = {
+InputField.propTypes = {
   title: PropTypes.string,
   control: PropTypes.object,
   name: PropTypes.string,
   type: PropTypes.string,
+  register: PropTypes.object
 };
 
-export default InputTextField;
+export default InputField;

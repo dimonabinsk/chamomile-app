@@ -34,7 +34,7 @@ const Pagination = ({
 
   return (
     <div className="flex justify-center">
-      <ul className="list-style-none flex font-miama">
+      <ul className="flex list-style-none font-miama">
         {/* Левая кнопка пагинации "Назад" */}
         <li className="hidden px-1 sm:block">
           <button
@@ -94,10 +94,10 @@ const Pagination = ({
 };
 
 Pagination.propTypes = {
-  totalCount: PropTypes.number.isRequired,
-  pageSize: PropTypes.number.isRequired,
-  onPageChange: PropTypes.func.isRequired,
-  currentPage: PropTypes.number.isRequired,
+  totalCount: PropTypes.number,
+  pageSize: PropTypes.number,
+  onPageChange: PropTypes.func,
+  currentPage: PropTypes.number,
   siblingCount: PropTypes.number,
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./navBar/navBar";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const Header = ({ fixed }) => {
   return (
@@ -10,12 +10,14 @@ const Header = ({ fixed }) => {
           fixed ? "fixed animate-birth" : "relative "
         } top-2 left-0 right-0 z-50`}
       >
-        <NavBar fixed={fixed} />
+        <NavBar />
       </header>
     </>
   );
 };
 
-// Header.propTypes = {};
+Header.propTypes = {
+  fixed: PropTypes.bool
+};
 
 export default Header;

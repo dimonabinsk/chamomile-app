@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import { Link } from "react-router-dom";
 import {
   Card,
   CardHeader,
@@ -11,7 +11,6 @@ import {
 } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 
 const GetCard = ({ src, alt, title, price, path }) => {
   return (
@@ -30,7 +29,7 @@ const GetCard = ({ src, alt, title, price, path }) => {
           />
         </Link>
       </CardHeader>
-      <CardBody className="scroll_card h-40 overflow-auto text-center">
+      <CardBody className="h-40 overflow-auto text-center scroll_card">
         <Typography variant="h5" className="mb-2 font-miama">
           {title}
         </Typography>

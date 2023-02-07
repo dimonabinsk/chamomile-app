@@ -3,7 +3,19 @@ import Catalog from "./Catalog";
 import PlantCare from "./PlantCare";
 import Accessories from "./Accessories";
 import Blog from "./Blog";
+import Login from "./Login";
 import User from "./User";
-import LoadingData from "./LoadingData";
+import LogOut from "./Logout";
+import License from "./License";
 
-export { Home, Catalog, PlantCare, Accessories, Blog, User, LoadingData };
+export {
+  Home,
+  Catalog,
+  PlantCare,
+  Accessories,
+  Blog,
+  Login,
+  User,
+  LogOut,
+  License
+};
