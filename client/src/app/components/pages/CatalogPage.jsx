@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 // import PropTypes from "prop-types";
-// import { useParams } from "react-router-dom";
 
-import { GetCard, Loader, Pagination } from "../common";
+
+import { ProductCard, Loader, Pagination } from "../common";
 import { Button, Typography } from "@material-tailwind/react";
 import { getCatalog } from "../../store/catalog";
-// import { useCatalog } from "../../hooks/useCatalog";
 
 const CatalogPage = () => {
+
   const [isSelectedGroup, setSelectedGroup] = useState("");
   const [isSelectedMethod, setSelectedMethod] = useState("");
 
@@ -16,7 +16,6 @@ const CatalogPage = () => {
 
   const PageSize = 8;
   const [currentPage, setCurrentPage] = useState(1);
-
 
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex);
@@ -71,17 +70,12 @@ const CatalogPage = () => {
             <Button onClick={() => handleSelectedMethod("Оранжерея")}>
               Фильтр по методу выращивания
             </Button>
-            <div
-              className="grid w-full grid-cols-1 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4 lg:gap-4"
-            >
+            <div className="grid w-full grid-cols-1 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4 lg:gap-4">
               {catalogGroup.map((item) => {
                 // console.log(item);
                 return (
-                  <div
-                    key={item._id}
-                    className="my-8"
-                  >
-                    <GetCard
+                  <div key={item._id} className="my-8">
+                    <ProductCard
                       path={`/catalog/${item._id}`}
                       src={`${item.images}`}
                       alt={item.name}

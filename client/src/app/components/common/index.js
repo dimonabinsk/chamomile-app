@@ -2,7 +2,16 @@ import Loader from "./loader/loader";
 import Pagination from "./pagination/pagination";
 import Search from "./form/search/search";
 import InputField from "./form/sharedForm/inputField";
-import GetCard from "./getCard/getCard";
+import ProductCard from "./card/productCard";
+import CardMain from "./card/cardMain";
 import ProtectedRoute from "./protectedRoute/protectedRoute";
 
-export { Loader, Pagination, Search, InputField, GetCard, ProtectedRoute };
+export {
+  Loader,
+  Pagination,
+  Search,
+  InputField,
+  ProductCard,
+  CardMain,
+  ProtectedRoute,
+};

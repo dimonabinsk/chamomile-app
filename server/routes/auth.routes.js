@@ -34,7 +34,7 @@ router.post("/signUp", ...validations, async (req, res) => {
       });
     }
     const { email, password } = req.body;
-
+    console.log(req.body);
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {

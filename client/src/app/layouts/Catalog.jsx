@@ -1,11 +1,11 @@
 import React from "react";
-import { CatalogPage } from "../components/pages";
+import { useParams } from "react-router-dom";
+import { CatalogPage, ProductPage } from "../components/pages";
 // import PropTypes from "prop-types";
 
 const Catalog = () => {
-  return (
-      <CatalogPage />
-  );
+  const { plantId } = useParams();
+  return plantId ? <ProductPage plantId={plantId} /> : <CatalogPage />;
 };
 
 // Catalog.propTypes = {};

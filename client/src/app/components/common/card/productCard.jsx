@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import {
-  Card,
+  Card ,
   CardHeader,
   CardBody,
   CardFooter,
@@ -12,15 +12,13 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 
-const GetCard = ({ src, alt, title, price, path }) => {
+const ProductCard = ({ src, alt, title, price, path }) => {
   return (
     <Card className="">
       <CardHeader color="blue-gray" className=" h-72">
         <Link
           to={path}
-          className={
-            "after:absolute after:top-[80%]  after:left-[calc(50%-60px)] after:w-[120px]  after:cursor-pointer after:rounded-md after:bg-green-1 after:bg-opacity-70 after:p-1  after:text-center after:font-bk-rt after:text-lg after:text-main-white after:opacity-0 after:content-['подробнее...'] hover:after:opacity-100"
-          }
+          className="after:absolute after:top-[80%]  after:left-[calc(50%-60px)] after:w-[120px]  after:cursor-pointer after:rounded-md after:bg-green-1 after:bg-opacity-70 after:p-1  after:text-center after:font-bk-rt after:text-lg after:text-main-white after:opacity-0 after:content-['подробнее...'] hover:after:opacity-100"
         >
           <img
             src={src}
@@ -41,17 +39,17 @@ const GetCard = ({ src, alt, title, price, path }) => {
         </Typography>
       </CardBody>
       <CardFooter divider className="flex items-center justify-between py-3">
-        <Typography variant="small">от {price} руб</Typography>
+        <Typography variant="small">{price} руб</Typography>
         <Button ripple={true} color="green" className=" font-bk-rt">
-          <FontAwesomeIcon icon={faBagShopping} className="mr-3" size="lg" />В
-          корзину
+          <FontAwesomeIcon icon={faBagShopping} className="mr-3" size="lg" />
+          Купить
         </Button>
       </CardFooter>
     </Card>
   );
 };
 
-GetCard.propTypes = {
+ProductCard.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
   title: PropTypes.string,
@@ -59,4 +57,4 @@ GetCard.propTypes = {
   path: PropTypes.string,
 };
 
-export default GetCard;
+export default ProductCard;

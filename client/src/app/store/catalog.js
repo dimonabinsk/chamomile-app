@@ -44,6 +44,13 @@ export const loadCatalogList = () => async (dispatch, getState) => {
     }
 }
 
+export const getProductById = (plantId) => (state) => {
+  // console.log("state", state.catalog.entities);
+  if (state.catalog.entities) {
+    return state.catalog.entities.find((p) => p._id === plantId);
+  }
+};
+
 export const getCatalog = () => (state) => state.catalog.entities;
 
 export const getCatalogLoadingStatus = () => (state) => state.catalog.isLoading;

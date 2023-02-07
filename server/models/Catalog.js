@@ -2,6 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const schema = new Schema(
   {
+    idAt: String,
     method: [],
     group: String,
     genus: String,
@@ -9,6 +10,8 @@ const schema = new Schema(
     name: String,
     images: [],
     price: Number,
+    descr: Object,
+    care: Object,
   },
 
   {

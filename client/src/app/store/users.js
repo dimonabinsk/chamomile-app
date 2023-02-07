@@ -4,6 +4,8 @@ import localStorageService from "../services/localStorage.service";
 import userService from "../services/user.service";
 import { generateAuthError } from "../utilities/generateAuthError";
 import history from "../utilities/history";
+
+
 const initialState = localStorageService.getAccessToken()
   ? {
       entities: null,
@@ -30,11 +32,13 @@ const usersSlice = createSlice({
       state.isLoading = true;
     },
     usersReceived: (state, action) => {
+
       state.entities = action.payload;
       state.dataLoaded = true;
       state.isLoading = false;
     },
     usersRequestFiled: (state, action) => {
+
       state.error = action.payload;
       state.isLoading = false;
     },
@@ -138,6 +142,8 @@ export const updateUser = (payload) => async (dispatch) => {
 };
 
 export const getUsersList = () => (state) => state.users.entities;
+
+
 export const getCurrentUserData = () => (state) => {
   return state.users.entities
     ? state.users.entities.find((user) => user._id === state.users.auth.userId)

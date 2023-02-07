@@ -1,3 +1,4 @@
+import { Typography } from "@material-tailwind/react";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams, Redirect } from "react-router-dom";
@@ -11,9 +12,10 @@ const User = () => {
     const params = useParams();
     const { userId, edit } = params;
     const currentUserId = useSelector(getCurrentUserId());
-
+    console.log(userId);
     return (
-        <>
+        <section className=" mt-14">
+            <Typography variant="h2" className="hidden">Пользователь</Typography>
             <UsersLoader>
                 {userId ? (
                     edit ? (
@@ -29,7 +31,7 @@ const User = () => {
                     <Redirect to={"/"} />
                 )}
             </UsersLoader>
-        </>
+        </section>
     );
 };
 
