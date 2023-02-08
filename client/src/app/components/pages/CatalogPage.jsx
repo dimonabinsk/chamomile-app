@@ -72,15 +72,16 @@ const CatalogPage = () => {
             </Button>
             <div className="grid w-full grid-cols-1 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4 lg:gap-4">
               {catalogGroup.map((item) => {
-                // console.log(item);
+                // console.log(item.descr.p);
                 return (
                   <div key={item._id} className="my-8">
                     <ProductCard
                       path={`/catalog/${item._id}`}
-                      src={`${item.images}`}
+                      src={`${item.images[0]}`}
                       alt={item.name}
                       price={item.price}
                       title={item.name}
+                      description={item.descr.p}
                     />
                   </div>
                 );

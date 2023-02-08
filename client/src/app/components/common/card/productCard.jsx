@@ -12,7 +12,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 
-const ProductCard = ({ src, alt, title, price, path }) => {
+const ProductCard = ({ src, alt, title, price, path, description }) => {
   return (
     <Card className="">
       <CardHeader color="blue-gray" className=" h-72">
@@ -32,10 +32,7 @@ const ProductCard = ({ src, alt, title, price, path }) => {
           {title}
         </Typography>
         <Typography className="font-bk-rt">
-          Далеко-далеко за словесными, горами в стране гласных и согласных живут
-          рыбные тексты. Маленькая, бросил. Там проектах, переписали ему
-          языкового вершину рыбного раз злых журчит на берегу! Меня
-          переписывается живет большого маленькая осталось подпоясал.
+          {description}
         </Typography>
       </CardBody>
       <CardFooter divider className="flex items-center justify-between py-3">
@@ -55,6 +52,7 @@ ProductCard.propTypes = {
   title: PropTypes.string,
   price: PropTypes.number,
   path: PropTypes.string,
+  description:PropTypes.string
 };
 
 export default ProductCard;
