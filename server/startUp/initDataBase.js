@@ -1,5 +1,4 @@
 const Catalog = require("../models/Catalog");
-
 const catalogMock = require("../mock/catalog.json");
 
 module.exports = async () => {

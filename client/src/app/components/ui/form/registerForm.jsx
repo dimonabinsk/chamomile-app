@@ -21,6 +21,8 @@ const RegisterForm = ({ onToggleForm }) => {
   const [staySystem, setStaySystem] = useState(false);
   const [license, setLicense] = useState(false);
 
+ 
+
   const dispatch = useDispatch();
   const {
     register,
@@ -35,8 +37,8 @@ const RegisterForm = ({ onToggleForm }) => {
 
   const onSubmit = (data) => {
     if (!isValid) return;
-    console.log({ ...data, license, staySystem });
-    dispatch(signUp({...data, license, staySystem}));
+    // console.log({ ...data, license, staySystem });
+    dispatch(signUp({ ...data, license, staySystem }));
     reset();
   };
 
@@ -44,7 +46,7 @@ const RegisterForm = ({ onToggleForm }) => {
     if (isValid) {
       if (license) return false;
     }
-      return true;
+    return true;
   };
 
   return (

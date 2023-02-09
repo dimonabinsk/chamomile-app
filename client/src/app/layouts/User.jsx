@@ -12,7 +12,7 @@ const User = () => {
     const params = useParams();
     const { userId, edit } = params;
     const currentUserId = useSelector(getCurrentUserId());
-    console.log(userId);
+    // console.log(userId);
     return (
         <section className=" mt-14">
             <Typography variant="h2" className="hidden">Пользователь</Typography>

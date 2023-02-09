@@ -13,10 +13,11 @@ import NavList from "../navList/navList";
 import Logo from "../logo/logo";
 import Search from "../../../common/form/search/search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBagShopping, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 import { getIsLoggedIn } from "../../../../store/users";
 import { NavProfile } from "../../navProfile";
+import { Basket } from "../../basket";
 
 export default function NavBar() {
   const isLoggedIn = useSelector(getIsLoggedIn());
@@ -73,26 +74,7 @@ export default function NavBar() {
             </NavLink>
           )}
 
-          <NavLink
-            to={"/"}
-            className={
-              "cursor-pointer text-green-4  hover:text-green-2 dark:text-green-3 dark:hover:text-green-1"
-            }
-          >
-            <Tooltip
-              content="Корзина"
-              animate={{
-                mount: { scale: 1, y: 0 },
-                unmount: { scale: 0, y: 25 },
-              }}
-              className={
-                "bg-transparent font-bk-rt text-green-4 dark:text-green-1 "
-              }
-            >
-              <FontAwesomeIcon icon={faBagShopping} size="xl" />
-            </Tooltip>
-            <span className="ml-2 text-green-4 dark:text-green-2">0</span>
-          </NavLink>
+          <Basket />
         </div>
 
         {
