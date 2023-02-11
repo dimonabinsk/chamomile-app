@@ -1,7 +1,7 @@
 import { Button, Typography } from "@material-tailwind/react";
 import { useHistory } from "react-router-dom";
 
-const License = () => {
+const LicensePage = () => {
   const history = useHistory();
   return (
     <div className="p-5 mt-20 ">
@@ -73,4 +73,4 @@ const License = () => {
   );
 };
 
-export default License;
+export default LicensePage;

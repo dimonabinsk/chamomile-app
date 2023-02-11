@@ -2,20 +2,11 @@ const { Schema, model } = require("mongoose");
 
 const schema = new Schema(
   {
-    userId: {
-      //   Кто оставил комментарий
-      type: Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
-    },
-    basket: [
-      {
-        productId: String,
-        quantity: Number,
-        price: Number,
-        totalPrice: Number,
-      },
-    ],
+    userId: String,
+    email: String,
+    totalQuantity: Number,
+    totalPrice:Number,
+    basket: {},
   },
 
   {

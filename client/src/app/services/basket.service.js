@@ -13,10 +13,10 @@ const basketService = {
     return data;
   },
 
-  createBasket: async (payload) => {
-    const { data } = await httpService.post(basketEndpoint, payload);
-    return data;
-  },
+  // getBasketAll: async (payload) => {
+  //   const { data } = await httpService.get(basketEndpoint, payload);
+  //   return data;
+  // },
   updateBasket: async (payload) => {
     const { data } = await httpService.patch(
       basketEndpoint + localStorageService.getUserId(),

@@ -1,13 +1,6 @@
 [
   {
-    "userId": "63e27b85cdaf3ce9eed7645a",
-    "basket": [
-      {
-        "productId": "63e3add50c84ff1f7958d3a2",
-        "quantity": 1,
-        "price": 100,
-        "totalPrice": 100
-      }
-    ]
+    "email": null,
+    "basket": null
   }
 ]

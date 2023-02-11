@@ -1,24 +1,10 @@
 import { createAction, createSlice } from "@reduxjs/toolkit";
 import basketService from "../services/basket.service";
 
-const initBasketEntities = [
-  {
-    userId: null,
-    basket: [
-      {
-        productId: null,
-        quantity: 0,
-        price: 0,
-        totalPrice: 0,
-      },
-    ],
-  },
-];
-
 const basketSlice = createSlice({
   name: "basket",
   initialState: {
-    entities: initBasketEntities,
+    entities: null,
     isLoading: true,
     error: null,
   },
@@ -34,13 +20,13 @@ const basketSlice = createSlice({
       state.error = action.payload;
       state.isLoading = false;
     },
-    basketCreate: (state, action) => {
-      state.entities = [action.payload];
+    basketAdd: (state, action) => {
+      state.entities = [{ ...action.payload }];
       state.isLoading = false;
     },
 
     basketUpdate: (state, action) => {
-      state.entities = [action.payload];
+      state.entities = [{ ...action.payload }];
       state.isLoading = false;
     },
 
@@ -58,15 +44,17 @@ const {
   basketRequested,
   basketReceived,
   basketRequestFailed,
-  basketCreate,
+  basketAdd,
   basketDelete,
   basketUpdate,
+
 } = actions;
 
 const addBasketRequested = createAction("basket/addBasketRequested");
-const deleteBasketRequested = createAction("basket/deleteBasketRequested");
 const updateBasketRequested = createAction("basket/updateBasketRequested");
+const deleteBasketRequested = createAction("basket/deleteBasketRequested");
 
+// получаем корзину по userId из БД
 export const loadBasketList = (userId) => async (dispatch) => {
   dispatch(basketRequested());
   try {
@@ -77,11 +65,25 @@ export const loadBasketList = (userId) => async (dispatch) => {
   }
 };
 
-export const createBasket = (payload) => async (dispatch) => {
+
+
+
+// изменяем корзину в первый раз созданную на сервере по умолчанию при регистрации пользователя
+export const addBasket = (payload) => async (dispatch) => {
   dispatch(addBasketRequested());
   try {
-    const { content } = await basketService.createBasket(payload);
-    dispatch(basketCreate(content));
+    const { content } = await basketService.updateBasket(payload);
+    dispatch(basketAdd(content));
+  } catch (error) {
+    dispatch(basketRequestFailed(error.message));
+  }
+};
+// добавляем в корзину товары
+export const updateBasket = (payload) => async (dispatch) => {
+  dispatch(updateBasketRequested());
+  try {
+    const { content } = await basketService.updateBasket(payload);
+    dispatch(basketUpdate(content));
   } catch (error) {
     dispatch(basketRequestFailed(error.message));
   }
@@ -97,23 +99,9 @@ export const deleteBasket = (productId) => async (dispatch) => {
   }
 };
 
-export const updateBasket = (payload) => async (dispatch) => {
-  dispatch(updateBasketRequested());
-  try {
-    const { content } = await basketService.updateBasket(payload);
-    dispatch(basketUpdate(content));
-  } catch (error) {
-    dispatch(basketRequestFailed(error.message));
-  }
-};
-
 export const getBasket = () => (state) => state.basket.entities;
 
-export const getBasketById = (id) => (state) => {
-  if (state.basket.entities) {
-    return state.basket.entities.find((b) => b.userId === id);
-  }
-};
+export const getBasketById = (id) => (state) => {};
 
 export const getBasketLoadingStatus = () => (state) => state.basket.isLoading;
 

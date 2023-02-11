@@ -8,14 +8,7 @@ const schema = new Schema(
       ref: "User",
       required: true,
     },
-    buying: [
-      {
-        productId: String,
-        quantity: Number,
-        price: Number,
-        totalPrice: Number,
-      },
-    ],
+    buying: Object,
   },
 
   {

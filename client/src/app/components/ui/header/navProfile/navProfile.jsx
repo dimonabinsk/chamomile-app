@@ -10,31 +10,13 @@ import {
   Avatar,
 } from "@material-tailwind/react";
 
-import { getCurrentUserData } from "../../../store/users";
-import { Loader } from "../../common";
+import { getCurrentUserData } from "../../../../store/users";
+import { Loader } from "../../../common";
 // import { createBasket } from "../../../store/basket";
 
 const NavProfile = () => {
   const currentUser = useSelector(getCurrentUserData());
-  // console.log(currentUser);
-  // const dispatch = useDispatch();
 
-// if (currentUser) {
-//   const initBasket = (id) => {
-//     return {
-//       userId: id,
-//       basket: [
-//         {
-//           productId: null,
-//           quantity: 0,
-//           price: 0,
-//           totalPrice: 0,
-//         },
-//       ],
-//     };
-//   };
-//   dispatch(createBasket(initBasket(currentUser._id)));
-// }
   return !currentUser ? (
     <Loader />
   ) : (

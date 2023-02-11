@@ -39,7 +39,7 @@ const LoginForm = ({ onToggleForm }) => {
     const redirect = history.location.state
       ? history.location.state.from.pathname
       : "/";
-    console.log({ ...data, staySystem });
+    // console.log({ ...data, staySystem });
     dispatch(login({ payload: { ...data, staySystem }, redirect }));
     reset();
   };
@@ -88,7 +88,7 @@ const LoginForm = ({ onToggleForm }) => {
             disabled={!isValid}
             fullWidth
           >
-            Отправить
+            войти
           </Button>
         </form>
       </CardBody>

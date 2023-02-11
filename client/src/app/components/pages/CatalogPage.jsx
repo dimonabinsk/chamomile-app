@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 // import PropTypes from "prop-types";
 
-
 import { ProductCard, Loader, Pagination } from "../common";
 import { Button, Typography } from "@material-tailwind/react";
 import { getCatalog } from "../../store/catalog";
 
 const CatalogPage = () => {
-
   const [isSelectedGroup, setSelectedGroup] = useState("");
   const [isSelectedMethod, setSelectedMethod] = useState("");
 

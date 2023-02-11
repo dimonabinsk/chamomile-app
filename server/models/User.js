@@ -12,8 +12,6 @@ const schema = new Schema(
     password: String,
     image: String,
     login: String,
-    basket: [],
-    buy: [],
     license: Boolean,
     staySystem: Boolean
   },

@@ -5,6 +5,7 @@ const router = express.Router({ mergeParams: true });
 const User = require("../models/User");
 const { generateUserData } = require("../utils/helpers");
 const tokenService = require("../services/token.service");
+const Basket = require("../models/Basket");
 
 const validations = [
   check("email").normalizeEmail().isEmail().withMessage("Некорректный email"),
@@ -62,6 +63,15 @@ router.post("/signUp", ...validations, async (req, res) => {
     res.status(201).send({
       ...tokens,
       userId: newUser._id,
+    });
+    await Basket.create({
+      basket: {
+        productId: true,
+      },
+      email: email,
+      userId: newUser._id,
+      totalQuantity: 0,
+      totalPrice:0,
     });
   } catch (error) {
     res.status(500).json({

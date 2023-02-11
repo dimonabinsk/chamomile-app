@@ -6,7 +6,7 @@ import Blog from "./Blog";
 import Login from "./Login";
 import User from "./User";
 import LogOut from "./Logout";
-import License from "./License";
+
 
 export {
   Home,
@@ -17,5 +17,5 @@ export {
   Login,
   User,
   LogOut,
-  License
+
 };

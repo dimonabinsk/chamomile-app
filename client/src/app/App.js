@@ -10,7 +10,6 @@ import {
   Blog,
   Catalog,
   Home,
-  License,
   Login,
   LogOut,
   PlantCare,
@@ -19,6 +18,8 @@ import {
 
 import { AppLoader } from "./components/ui/hoc";
 import { ProtectedRoute } from "./components/common";
+import { BasketPage, LicensePage } from "./components/pages";
+
 
 function App() {
   const [fixedHeader, setFixedHeader] = useState(false);
@@ -50,11 +51,11 @@ function App() {
             <Route path="/accessories" component={Accessories} />
             <Route path="/plantcare" component={PlantCare} />
             <Route path="/blog" component={Blog} />
-            {/* <Route path="/bag" component={ShoppingCart} /> */}
+            <Route path="/basket" component={BasketPage} />
             <Route path="/login/:type?" component={Login} />
             <Route path="/logout" component={LogOut} />
             <Route path="/catalog/:plantId?" component={Catalog} />
-            <Route path="/license" component={License} />
+            <Route path="/license" component={LicensePage} />
             <Route path="/" exact component={Home} />
             <Redirect to="/" />
           </Switch>

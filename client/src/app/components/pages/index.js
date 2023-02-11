@@ -3,5 +3,7 @@ import CatalogPage from "./CatalogPage";
 import EditUserPage from "./EditUserPage";
 import UserPage from "./UserPage";
 import ProductPage from "./ProductPage";
+import BasketPage from "./BasketPage";
+import LicensePage from "./LicensePage";
 
-export { HomePage, CatalogPage, EditUserPage, UserPage, ProductPage };
+export { HomePage, CatalogPage, EditUserPage, UserPage, ProductPage, BasketPage, LicensePage };

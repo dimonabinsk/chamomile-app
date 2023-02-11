@@ -9,15 +9,19 @@ import { useDarkMode } from "../../../../hooks";
 
 import OpenNavBtn from "../openNavBtn/openNavBtn";
 import ChangeThemeBtn from "../changeThemeBtn/changeThemeBtn";
-import NavList from "../navList/navList";
-import Logo from "../logo/logo";
-import Search from "../../../common/form/search/search";
+
+import { Logo } from "../logo";
+import { Search } from "../../../common/form/search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-
+import { NavList } from "../navList";
 import { getIsLoggedIn } from "../../../../store/users";
-import { NavProfile } from "../../navProfile";
-import { Basket } from "../../basket";
+import { NavProfile } from "../navProfile";
+import { NavBasket } from "../navBasket";
+
+
+
+
 
 export default function NavBar() {
   const isLoggedIn = useSelector(getIsLoggedIn());
@@ -74,7 +78,7 @@ export default function NavBar() {
             </NavLink>
           )}
 
-          <Basket />
+          <NavBasket isLoggedIn={isLoggedIn} />
         </div>
 
         {
