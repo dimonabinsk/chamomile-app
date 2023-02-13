@@ -19,10 +19,6 @@ import { getIsLoggedIn } from "../../../../store/users";
 import { NavProfile } from "../navProfile";
 import { NavBasket } from "../navBasket";
 
-
-
-
-
 export default function NavBar() {
   const isLoggedIn = useSelector(getIsLoggedIn());
   const [openNav, setOpenNav] = useState(false);

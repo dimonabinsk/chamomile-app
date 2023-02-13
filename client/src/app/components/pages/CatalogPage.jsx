@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 // import PropTypes from "prop-types";
-
-import { ProductCard, Loader, Pagination } from "../common";
+import { SpinnerLoader } from "../ui/spinnerLoader";
+import { ProductCard, Pagination } from "../common";
 import { Button, Typography } from "@material-tailwind/react";
 import { getCatalog } from "../../store/catalog";
 
@@ -12,7 +12,7 @@ const CatalogPage = () => {
 
   const catalog = useSelector(getCatalog());
 
-  const PageSize = 8;
+  const PageSize = 4;
   const [currentPage, setCurrentPage] = useState(1);
 
   const handlePageChange = (pageIndex) => {
@@ -55,7 +55,7 @@ const CatalogPage = () => {
       catalogGroup && (
         <>
           {" "}
-          <section className="px-4 mt-32 mb-10 lg:px-8">
+          <section className="mt-32 mb-10 px-4 lg:px-8">
             <Typography
               variant="h2"
               className=" font-bk-bt text-graphite dark:text-main-white"
@@ -70,7 +70,6 @@ const CatalogPage = () => {
             </Button>
             <div className="grid w-full grid-cols-1 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4 lg:gap-4">
               {catalogGroup.map((item) => {
-                // console.log(item.descr.p);
                 return (
                   <div key={item._id} className="my-8">
                     <ProductCard
@@ -96,7 +95,7 @@ const CatalogPage = () => {
       )
     );
   } else {
-    return <Loader />;
+    return <SpinnerLoader />;
   }
 };
 

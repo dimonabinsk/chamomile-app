@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux"
-import { Loader } from "../components/common";
+
+import { SpinnerLoader } from "../components/ui/spinnerLoader";
 import { logOut } from "../store/users";
 
 
@@ -10,7 +11,7 @@ const LogOut = () => {
     useEffect(() => {
         dispatch(logOut());
     }, [dispatch]);
-    return <Loader />;
+    return <SpinnerLoader />;
 };
 
 

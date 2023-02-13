@@ -11,14 +11,14 @@ import {
 } from "@material-tailwind/react";
 
 import { getCurrentUserData } from "../../../../store/users";
-import { Loader } from "../../../common";
+import { SpinnerLoader } from "../../spinnerLoader";
 // import { createBasket } from "../../../store/basket";
 
 const NavProfile = () => {
   const currentUser = useSelector(getCurrentUserData());
 
   return !currentUser ? (
-    <Loader />
+    <SpinnerLoader />
   ) : (
     <>
       <Menu

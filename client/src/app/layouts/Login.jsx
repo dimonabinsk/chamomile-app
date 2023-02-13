@@ -9,6 +9,8 @@ const Login = () => {
   const [typeForm, setTypeForm] = useState(
     type === "register" ? type : "login"
   );
+
+
   useEffect(() => {
     history.push(`/login/${typeForm}`);
   }, [history, typeForm]);

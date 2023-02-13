@@ -7,9 +7,9 @@ import {
   loadUsersList,
 } from "../../../store/users";
 import { loadCatalogList } from "../../../store/catalog";
-import { Loader } from "../../common";
-import { loadBasketList } from "../../../store/basket";
+import { loadBasketUser } from "../../../store/basket";
 import localStorageService from "../../../services/localStorage.service";
+import { SpinnerLoader } from "../spinnerLoader";
 
 const AppLoader = ({ children }) => {
   const dispatch = useDispatch();
@@ -21,13 +21,11 @@ const AppLoader = ({ children }) => {
     dispatch(loadCatalogList());
     if (isLoggedIn) {
       dispatch(loadUsersList());
-      if (userId) {
-        dispatch(loadBasketList(userId));
-      }
+      dispatch(loadBasketUser(userId));
     }
   }, [dispatch, isLoggedIn, userId]);
 
-  return usersStatusLoading ? <Loader /> : children;
+  return usersStatusLoading ? <SpinnerLoader /> : children;
 };
 
 AppLoader.propTypes = {

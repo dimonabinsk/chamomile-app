@@ -35,7 +35,7 @@ router.post("/signUp", ...validations, async (req, res) => {
       });
     }
     const { email, password } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {
@@ -65,13 +65,11 @@ router.post("/signUp", ...validations, async (req, res) => {
       userId: newUser._id,
     });
     await Basket.create({
-      basket: {
-        productId: true,
-      },
       email: email,
       userId: newUser._id,
       totalQuantity: 0,
-      totalPrice:0,
+      totalPrice: 0,
+      basket: { product: false },
     });
   } catch (error) {
     res.status(500).json({

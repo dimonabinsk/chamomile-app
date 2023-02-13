@@ -7,10 +7,12 @@ const basketSlice = createSlice({
     entities: null,
     isLoading: true,
     error: null,
+    isUpdate: false,
   },
   reducers: {
     basketRequested: (state) => {
       state.isLoading = true;
+      state.isUpdate = true;
     },
     basketReceived: (state, action) => {
       state.entities = action.payload;
@@ -23,11 +25,13 @@ const basketSlice = createSlice({
     basketAdd: (state, action) => {
       state.entities = [{ ...action.payload }];
       state.isLoading = false;
+      state.isUpdate = false;
     },
 
     basketUpdate: (state, action) => {
       state.entities = [{ ...action.payload }];
       state.isLoading = false;
+      state.isUpdate = false;
     },
 
     basketDelete: (state, action) => {
@@ -47,15 +51,14 @@ const {
   basketAdd,
   basketDelete,
   basketUpdate,
-
 } = actions;
 
 const addBasketRequested = createAction("basket/addBasketRequested");
 const updateBasketRequested = createAction("basket/updateBasketRequested");
 const deleteBasketRequested = createAction("basket/deleteBasketRequested");
 
-// получаем корзину по userId из БД
-export const loadBasketList = (userId) => async (dispatch) => {
+// создаем корзину пользователя при регистрации по userId в mongoDB
+export const loadBasketUser = (userId) => async (dispatch) => {
   dispatch(basketRequested());
   try {
     const { content } = await basketService.getBasket(userId);
@@ -64,8 +67,6 @@ export const loadBasketList = (userId) => async (dispatch) => {
     dispatch(basketRequestFailed(error.message));
   }
 };
-
-
 
 
 // изменяем корзину в первый раз созданную на сервере по умолчанию при регистрации пользователя

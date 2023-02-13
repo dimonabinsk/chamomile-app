@@ -32,7 +32,6 @@ const usersSlice = createSlice({
       state.isLoading = true;
     },
     usersReceived: (state, action) => {
-
       state.entities = action.payload;
       state.dataLoaded = true;
       state.isLoading = false;

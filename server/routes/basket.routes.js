@@ -4,7 +4,6 @@ const Basket = require("../models/Basket");
 
 const router = express.Router({ mergeParams: true });
 
-
 // отправка корзины по id пользователя
 router.get("/", auth, async (req, res) => {
   try {
@@ -17,7 +16,6 @@ router.get("/", auth, async (req, res) => {
     });
   }
 });
-
 
 // router.post("/", auth, async (req, res) => {
 //   try {
