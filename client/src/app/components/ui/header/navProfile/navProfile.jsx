@@ -6,7 +6,6 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
-  IconButton,
   Avatar,
 } from "@material-tailwind/react";
 
@@ -28,9 +27,9 @@ const NavProfile = () => {
         }}
       >
         <MenuHandler>
-          <IconButton size="sm" className="p-0 mr-2 bg-transparent">
-            <Avatar src={currentUser.image} variant="rounded" size="xs" />
-          </IconButton>
+          <button className="mr-4 bg-transparent p-0">
+            <Avatar src={currentUser.image} variant="rounded" size="sm" />
+          </button>
         </MenuHandler>
         <MenuList>
           <MenuItem>

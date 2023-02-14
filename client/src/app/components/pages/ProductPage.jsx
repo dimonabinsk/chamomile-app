@@ -19,7 +19,7 @@ const ProductPage = () => {
   const userBasket = useSelector(getBasket());
 
   const { addToBasket } = useActionsBasket(plantId);
-  console.log(userBasket);
+
   if (isLoadingProductStatus && isLoadingProductStatus && userBasket)
     return <SpinnerLoader />;
 
