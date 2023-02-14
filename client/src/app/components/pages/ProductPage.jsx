@@ -1,60 +1,79 @@
 import React from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Avatar, Button, Typography } from "@material-tailwind/react";
+import { Button, Typography } from "@material-tailwind/react";
 
 import { getBasket, getBasketLoadingStatus } from "../../store/basket";
 import { getCatalogLoadingStatus, getProductById } from "../../store/catalog";
 import { SpinnerLoader } from "../ui/spinnerLoader";
-import { getDataStatus } from "../../store/users";
 import { useActionsBasket } from "../../hooks";
+import { SwiperSlider } from "../common";
 
 const ProductPage = () => {
   const { plantId } = useParams();
-  const history = useHistory();
+
   // const dispatch = useDispatch();
   const isLoadingBasket = useSelector(getBasketLoadingStatus());
   const currentProduct = useSelector(getProductById(plantId));
   const isLoadingProductStatus = useSelector(getCatalogLoadingStatus());
   const userBasket = useSelector(getBasket());
-  const userDataLoadStatus = useSelector(getDataStatus());
+
   const { addToBasket } = useActionsBasket(plantId);
   console.log(userBasket);
   if (isLoadingProductStatus && isLoadingProductStatus && userBasket)
     return <SpinnerLoader />;
 
   if (currentProduct) {
+    const product = { ...currentProduct };
     return (
-      <div className="mt-12 ">
-        <Typography variant="h3" className="dark:text-main-white">
-          {currentProduct.name}
+      <section className="relative top-16 mx-4">
+        <Typography variant="h2" alt="описание товара" className="sr-only">
+          Описание товара
         </Typography>
-        <Avatar src={currentProduct.images[0]} alt="avatar" size="xxl" />
-        <Button
-          color="green"
-          onClick={() =>
-            addToBasket(
-              userBasket[0],
-              isLoadingProductStatus,
-              isLoadingBasket,
-              currentProduct,
-              plantId
-            )
-          }
-        >
-          Добавить в корзину
-        </Button>
-        <Button
-          color="green"
-          onClick={() =>
-            userDataLoadStatus
-              ? history.push("/basket")
-              : history.push("/login")
-          }
-        >
-          Перейти в корзину
-        </Button>
-      </div>
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <div className="">
+            <SwiperSlider product={product} />
+          </div>
+          <div className="">
+            <Typography
+              variant="h3"
+              className="ml-3 font-miama text-green-4 dark:text-green-1"
+            >
+              {product.name}
+            </Typography>
+
+            {product.descr.p.split("\n").map((p, i) => (
+              <Typography
+                key={i + "abc"}
+                className="mt-4 px-1 font-bk-rt dark:text-main-white lg:mt-5 lg:px-4"
+              >
+                {p}
+              </Typography>
+            ))}
+
+            <Typography className="mt-5 px-4 text-2xl dark:text-main-white">
+              ₽{product.price}
+            </Typography>
+
+            <Button
+              color="green"
+              onClick={() =>
+                addToBasket(
+                  userBasket[0],
+                  isLoadingProductStatus,
+                  isLoadingBasket,
+                  product,
+                  plantId
+                )
+              }
+              className="mt-5 ml-3"
+            >
+              Добавить в корзину
+            </Button>
+          </div>
+        </div>
+        <div></div>
+      </section>
     );
   }
 };

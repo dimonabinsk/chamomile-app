@@ -9,6 +9,7 @@ const schema = new Schema(
     family: String,
     name: String,
     images: [],
+    imgMain: String,
     price: Number,
     descr: Object,
     care: Object,

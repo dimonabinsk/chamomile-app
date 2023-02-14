@@ -5,7 +5,7 @@ import InputField from "./form/sharedForm/inputField";
 import ProductCard from "./card/productCard";
 import CardMain from "./card/cardMain";
 import { ProtectedRoute } from "./protectedRoute";
-
+import { SwiperSlider } from "./swiperSlider";
 
 export {
   Pagination,
@@ -14,4 +14,5 @@ export {
   ProductCard,
   CardMain,
   ProtectedRoute,
+  SwiperSlider,
 };
