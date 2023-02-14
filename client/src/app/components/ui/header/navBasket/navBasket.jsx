@@ -33,7 +33,7 @@ const NavBasket = ({ isLoggedIn }) => {
           >
             <MenuHandler>
               <IconButton
-                size="xl"
+                size="lg"
                 className="flex flex-col font-bk-rt text-green-4 dark:text-green-1"
                 variant="text"
               >
@@ -63,7 +63,7 @@ const NavBasket = ({ isLoggedIn }) => {
           >
             <MenuHandler>
               <IconButton
-                size="xl"
+                size="lg"
                 className="p-4 font-bk-rt text-green-4 dark:text-green-1"
                 variant="text"
               >
@@ -117,7 +117,7 @@ const NavBasket = ({ isLoggedIn }) => {
       >
         <MenuHandler>
           <IconButton
-            size="xl"
+            size="lg"
             className="flex flex-col font-bk-rt text-green-4 dark:text-green-1"
             variant="text"
           >

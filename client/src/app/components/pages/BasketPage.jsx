@@ -13,17 +13,8 @@ import { getBasket, getBasketLoadingStatus } from "../../store/basket";
 import { SpinnerLoader } from "../ui/spinnerLoader";
 import { useActionsBasket } from "../../hooks";
 import { getCatalog, getCatalogLoadingStatus } from "../../store/catalog";
-// import localStorageService from "../../services/localStorage.service";
 
 const BasketPage = () => {
-  // const userId = localStorageService.getUserId();
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(loadBasketUser(userId));
-  //   dispatch(loadCatalogList());
-  // }, [dispatch, userId]);
-
   const currentBasket = useSelector(getBasket());
   const { addToBasket, deleteToBasket } = useActionsBasket();
   const isLoadingProductStatus = useSelector(getCatalogLoadingStatus());
@@ -67,19 +58,19 @@ const BasketPage = () => {
               <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-900">
                 {i + 1}
               </td>
-              <td className="whitespace-nowrap px-6 py-4 font-miama text-sm text-gray-900">
+              <td className="whitespace-nowrap px-6 py-4 font-miama text-lg font-semibold text-graphite">
                 <Avatar
                   src={productBasketValue[i].img}
                   alt="avatar"
-                  size="sm"
+                  size="lg"
                   className="mr-2"
                 />
                 {productBasketValue[i].name}
               </td>
-              <td className="whitespace-nowrap px-6 py-4 text-sm font-light text-gray-900">
+              <td className="whitespace-nowrap px-6 py-4 text-base font-semibold text-gray-900">
                 {productBasketValue[i].price}
               </td>
-              <td className="flex justify-center whitespace-nowrap px-6 py-4 text-sm font-light text-gray-900">
+              <td className="flex justify-center whitespace-nowrap px-6 py-6 text-sm font-light text-gray-900">
                 <IconButton
                   color="red"
                   size="sm"
@@ -95,7 +86,7 @@ const BasketPage = () => {
                 >
                   <FontAwesomeIcon icon={faMinus} />
                 </IconButton>
-                <Typography variant="lead" className="mx-2">
+                <Typography className="mx-2 pt-1 text-base font-semibold text-gray-900">
                   {productBasketValue[i].quantity}
                 </Typography>
                 <IconButton
@@ -114,7 +105,7 @@ const BasketPage = () => {
                   <FontAwesomeIcon icon={faPlus} />
                 </IconButton>
               </td>
-              <td className="whitespace-nowrap px-6 py-4 text-center text-sm font-light text-gray-900">
+              <td className="whitespace-nowrap px-6 py-4 text-center text-base font-semibold text-gray-900">
                 {productBasketValue[i].totalPrice}
               </td>
               <td className="whitespace-nowrap px-6 py-4 text-center text-sm text-gray-900">
