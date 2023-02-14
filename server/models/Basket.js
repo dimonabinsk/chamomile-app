@@ -5,7 +5,7 @@ const schema = new Schema(
     userId: String,
     email: String,
     totalQuantity: Number,
-    totalPrice:Number,
+    totalPrice: Number,
     basket: {},
   },
 

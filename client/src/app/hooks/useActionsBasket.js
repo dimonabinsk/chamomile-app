@@ -52,7 +52,7 @@ export function useActionsBasket() {
         console.log("basket update");
         dispatch(updateBasket(basket));
       }
-      if (!userBasket.basket[plantId]) {
+      if (!userBasket.basket[plantId] && userBasket.basket.product === true) {
         const price = userBasket.totalPrice;
         const quantity = userBasket.totalQuantity;
         const basket = {
