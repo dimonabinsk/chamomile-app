@@ -17,9 +17,9 @@ import {
 } from "./layouts";
 
 import { AppLoader } from "./components/ui/hoc";
-import { ProtectedRoute } from "./components/common";
-import { BasketPage, LicensePage } from "./components/pages";
 
+import { BasketPage, LicensePage } from "./components/pages";
+import { ProtectedRoute } from "./components/common";
 
 function App() {
   const [fixedHeader, setFixedHeader] = useState(false);
@@ -48,10 +48,10 @@ function App() {
           <Header fixed={fixedHeader} />
           <Switch>
             <ProtectedRoute path="/user/:userId?/:edit?" component={User} />
+            <ProtectedRoute path="/basket" component={BasketPage} />
             <Route path="/accessories" component={Accessories} />
             <Route path="/plantcare" component={PlantCare} />
             <Route path="/blog" component={Blog} />
-            <Route path="/basket" component={BasketPage} />
             <Route path="/login/:type?" component={Login} />
             <Route path="/logout" component={LogOut} />
             <Route path="/catalog/:plantId?" component={Catalog} />
