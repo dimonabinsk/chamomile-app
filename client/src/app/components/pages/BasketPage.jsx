@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -8,11 +9,13 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-import { useSelector } from "react-redux";
+import config from "../../../config.json";
 import { getBasket, getBasketLoadingStatus } from "../../store/basket";
 import { SpinnerLoader } from "../ui/spinnerLoader";
 import { useActionsBasket } from "../../hooks";
 import { getCatalog, getCatalogLoadingStatus } from "../../store/catalog";
+
+const pathBase = config.API_BASE_URL;
 
 const BasketPage = () => {
   const currentBasket = useSelector(getBasket());
@@ -60,7 +63,7 @@ const BasketPage = () => {
               </td>
               <td className="whitespace-nowrap px-6 py-4 font-miama text-lg font-semibold text-graphite">
                 <Avatar
-                  src={productBasketValue[i].img}
+                  src={pathBase + productBasketValue[i].img}
                   alt="avatar"
                   size="lg"
                   className="mr-2"

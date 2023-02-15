@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import config from "../../../config.json";
 // import PropTypes from "prop-types";
 import { SpinnerLoader } from "../ui/spinnerLoader";
 import { ProductCard, Pagination } from "../common";
 import { Button, Typography } from "@material-tailwind/react";
 import { getCatalog } from "../../store/catalog";
+
+const pathBase = config.API_BASE_URL;
 
 const CatalogPage = () => {
   const [isSelectedGroup, setSelectedGroup] = useState("");
@@ -74,7 +77,7 @@ const CatalogPage = () => {
                   <div key={item._id} className="my-8">
                     <ProductCard
                       path={`/catalog/${item._id}`}
-                      src={`${item.images[0]}`}
+                      src={pathBase + item.imgMain}
                       alt={item.name}
                       price={item.price}
                       title={item.name}

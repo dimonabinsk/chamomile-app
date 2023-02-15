@@ -21,7 +21,7 @@ const RegisterForm = ({ onToggleForm }) => {
   const [staySystem, setStaySystem] = useState(false);
   const [license, setLicense] = useState(false);
 
- 
+
 
   const dispatch = useDispatch();
   const {
@@ -38,7 +38,7 @@ const RegisterForm = ({ onToggleForm }) => {
   const onSubmit = (data) => {
     if (!isValid) return;
     // console.log({ ...data, license, staySystem });
-    dispatch(signUp({ ...data, license, staySystem }));
+    dispatch(signUp({ ...data, license, staySystem, admin: false }));
     reset();
   };
 

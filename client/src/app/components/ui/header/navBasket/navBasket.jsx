@@ -1,5 +1,5 @@
 // import { useEffect, useState } from "react";
-
+import config from "../../../../../config.json";
 import {
   Menu,
   MenuHandler,
@@ -14,6 +14,8 @@ import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import { getBasket, getBasketLoadingStatus } from "../../../../store/basket";
 import { Link } from "react-router-dom";
+
+const pathBase = config.API_BASE_URL;
 
 const NavBasket = ({ isLoggedIn }) => {
   const userBasket = useSelector(getBasket());
@@ -76,7 +78,12 @@ const NavBasket = ({ isLoggedIn }) => {
             <MenuList className="max-h-[50vh]">
               {basket.map(({ name, img, quantity, totalPrice }, i) => (
                 <MenuItem key={i + name} className="">
-                  <Avatar src={img} alt="avatar" size="xl" className="mr-2" />
+                  <Avatar
+                    src={pathBase + img}
+                    alt="avatar"
+                    size="xl"
+                    className="mr-2"
+                  />
                   <Typography variant="h6" className="mt-0 font-bk-rt">
                     {name}
                   </Typography>

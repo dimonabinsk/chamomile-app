@@ -1,6 +1,9 @@
 import { useDispatch } from "react-redux";
 import { addBasket, updateBasket } from "../store/basket";
 
+
+
+
 export function useActionsBasket() {
   const dispatch = useDispatch();
 
@@ -12,6 +15,7 @@ export function useActionsBasket() {
     plantId
   ) {
     if (!isLoadingProductStatus && !isLoadingBasket && userBasket) {
+      console.log(currentProduct);
       if (userBasket.basket.product === false) {
         const basket = {
           ...userBasket,
@@ -20,7 +24,7 @@ export function useActionsBasket() {
           basket: {
             [plantId]: {
               name: currentProduct.name,
-              img: currentProduct.images[0],
+              img: currentProduct.imgMain,
               quantity: 1,
               price: currentProduct.price,
               totalPrice: currentProduct.price,
@@ -63,7 +67,7 @@ export function useActionsBasket() {
             ...userBasket.basket,
             [plantId]: {
               name: currentProduct.name,
-              img: currentProduct.images[0],
+              img: currentProduct.imgMain,
               quantity: 1,
               price: currentProduct.price,
               totalPrice: currentProduct.price,

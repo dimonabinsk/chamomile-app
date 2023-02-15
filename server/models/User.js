@@ -13,7 +13,8 @@ const schema = new Schema(
     image: String,
     login: String,
     license: Boolean,
-    staySystem: Boolean
+    staySystem: Boolean,
+    admin: Boolean,
   },
 
   {

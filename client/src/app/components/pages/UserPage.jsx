@@ -8,12 +8,13 @@ import {
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { getCurrentUserData } from "../../store/users";
+import { UploadField } from "../common/uploadField";
 
 const UserPage = ({ userId }) => {
   const user = useSelector(getCurrentUserData());
   // console.log(user);
   return (
-    <div className="flex mx-5">
+    <div className="mx-5 flex">
       <div className="grow-0">
         <Card>
           <CardHeader>
@@ -31,7 +32,9 @@ const UserPage = ({ userId }) => {
         </Card>
       </div>
       <div className="grow">
-        <div className=""></div>
+        <div className="">
+          <UploadField />
+        </div>
         <div className=""></div>
       </div>
     </div>
