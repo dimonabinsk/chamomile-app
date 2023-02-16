@@ -7,10 +7,11 @@ import {
 } from "@material-tailwind/react";
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { getCurrentUserData } from "../../store/users";
 import { UploadField } from "../common/uploadField";
 
-const UserPage = ({ userId }) => {
+const UserPage = ({ userId, admin }) => {
   const user = useSelector(getCurrentUserData());
   // console.log(user);
   return (
@@ -35,7 +36,13 @@ const UserPage = ({ userId }) => {
         <div className="">
           <UploadField />
         </div>
-        <div className=""></div>
+        <div className="">
+          {admin && (
+            <Link className="mt-5 text-base dark:text-main-white" to={"/admin"}>
+              Перейти в админ-панель
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -43,6 +50,7 @@ const UserPage = ({ userId }) => {
 
 UserPage.propTypes = {
   userId: PropTypes.string,
+  admin: PropTypes.bool,
 };
 
 export default UserPage;

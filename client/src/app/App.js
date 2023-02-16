@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/ui/header";
 import {
   Accessories,
+  Admin,
   Blog,
   Catalog,
   Home,
@@ -49,6 +50,7 @@ function App() {
           <Switch>
             <ProtectedRoute path="/user/:userId?/:edit?" component={User} />
             <ProtectedRoute path="/basket" component={BasketPage} />
+            <ProtectedRoute path="/admin" component={Admin} />
             <Route path="/accessories" component={Accessories} />
             <Route path="/plantcare" component={PlantCare} />
             <Route path="/blog" component={Blog} />
