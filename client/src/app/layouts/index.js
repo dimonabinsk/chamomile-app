@@ -6,6 +6,7 @@ import Blog from "./Blog";
 import Login from "./Login";
 import User from "./User";
 import LogOut from "./Logout";
+import Admin from "./Admin";
 
 
 export {
@@ -17,5 +18,5 @@ export {
   Login,
   User,
   LogOut,
-
+Admin
 };

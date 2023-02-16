@@ -7,6 +7,10 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
+import config from "../../../../config.json";
+
+const pathBase = config.API_BASE_URL;
+
 const CardMain = () => {
   return (
     <>
@@ -21,7 +25,10 @@ const CardMain = () => {
         <div className="grid w-full grid-cols-1 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4 lg:gap-4">
           <Card className="mt-10">
             <CardHeader>
-              <img src="/images/catalog/jasmine/jasmine-1.jpg" alt="plant" />
+              <img
+                src={pathBase + "/images/catalog/jasmine-1.jpg"}
+                alt="plant"
+              />
             </CardHeader>
             <CardBody>
               <Typography variant="h3" className=" font-miama">
@@ -31,7 +38,10 @@ const CardMain = () => {
           </Card>
           <Card className="mt-10">
             <CardHeader>
-              <img src="/images/catalog/jasmine/jasmine-1.jpg" alt="plant" />
+              <img
+                src={pathBase + "/images/catalog/jasmine-1.jpg"}
+                alt="plant"
+              />
             </CardHeader>
             <CardBody>
               <Typography variant="h3" className=" font-miama">
@@ -41,7 +51,10 @@ const CardMain = () => {
           </Card>
           <Card className="mt-10">
             <CardHeader>
-              <img src="/images/catalog/jasmine/jasmine-1.jpg" alt="plant" />
+              <img
+                src={pathBase + "/images/catalog/jasmine-1.jpg"}
+                alt="plant"
+              />
             </CardHeader>
             <CardBody>
               <Typography variant="h3" className=" font-miama">
@@ -51,7 +64,10 @@ const CardMain = () => {
           </Card>
           <Card className="mt-10">
             <CardHeader>
-              <img src="/images/catalog/jasmine/jasmine-1.jpg" alt="plant" />
+              <img
+                src={pathBase + "/images/catalog/jasmine-1.jpg"}
+                alt="plant"
+              />
             </CardHeader>
             <CardBody>
               <Typography variant="h3" className=" font-miama">

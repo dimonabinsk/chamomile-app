@@ -6,10 +6,10 @@ const router = express.Router({ mergeParams: true });
 const chalk = require("chalk");
 
 router.post("/:fileName", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const { fileName } = req.params;
   const name = fileName.split(".")[0];
-  console.log(name);
+  // console.log(name);
   //   const randomString = crypto.randomBytes(5).toString("hex");
 
   const stream = fs.createWriteStream(
@@ -27,6 +27,30 @@ router.post("/:fileName", (req, res) => {
 
 router
   .get("/main/:fileName", (req, res) => {
+    const { fileName } = req.params;
+    const dirname = req.url.split("/")[1];
+    const name = fileName.split(".")[0];
+
+    const img = fs.readFileSync(
+      `./public/images/${dirname}/${name}/${fileName}`
+    );
+
+    res.send(img);
+  })
+
+  .get("/banner/:fileName", (req, res) => {
+    const { fileName } = req.params;
+    const dirname = req.url.split("/")[1];
+    const name = fileName.split(".")[0];
+
+    const img = fs.readFileSync(
+      `./public/images/${dirname}/${name}/${fileName}`
+    );
+
+    res.send(img);
+  })
+
+  .get("/bg-link/:fileName", (req, res) => {
     const { fileName } = req.params;
     const dirname = req.url.split("/")[1];
     const name = fileName.split(".")[0];
