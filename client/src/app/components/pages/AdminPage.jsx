@@ -1,7 +1,14 @@
 import React from "react";
+import { Typography } from "@material-tailwind/react";
 
 const AdminPage = () => {
-  return <div>AdminPanel</div>;
+  return (
+    <div className="relative top-14">
+      <Typography variant="h3" className="dark:text-main-white">
+        Панель администратора
+      </Typography>
+    </div>
+  );
 };
 
 export default AdminPage;

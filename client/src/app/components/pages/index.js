@@ -6,6 +6,8 @@ import ProductPage from "./ProductPage";
 import BasketPage from "./BasketPage";
 import LicensePage from "./LicensePage";
 import AdminPage from "./AdminPage";
+import ProductList from "./ProductList";
+import CreatedProduct from "./CreatedProduct";
 
 export {
   HomePage,
@@ -16,4 +18,6 @@ export {
   BasketPage,
   LicensePage,
   AdminPage,
+  ProductList,
+  CreatedProduct
 };

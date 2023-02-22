@@ -16,7 +16,8 @@ router.use("/buying", require("./buying.routes"));
 // /api/user
 router.use("/user", require("./user.routes"));
 
-// /api/upload_avatar
+// /api/images
 router.use("/images", require("./images.routes"));
+
 
 module.exports = router;

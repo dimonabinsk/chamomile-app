@@ -3,15 +3,21 @@ const express = require("express");
 const mongoose = require("mongoose");
 const config = require("config");
 const chalk = require("chalk");
+const fileupload = require("express-fileupload");
 const cors = require("cors");
 const initDataBase = require("./startUp/initDataBase");
+const bodyParser = require("body-parser");
 const routes = require("./routes");
 
 const app = express();
+
 app.use(express.static("public"));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
+app.use(fileupload());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 // /api
 app.use("/api", routes);
 const PORT = config.get("port") ?? 8080;

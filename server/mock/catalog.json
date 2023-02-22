@@ -12,7 +12,7 @@
       "/images/catalog/azalea-3.jpg",
       "/images/catalog/azalea-4.jpg"
     ],
-    "price": 100,
+    "price": "130",
     "imgMain": "/images/main/azalea.jpg",
     "descr": {
       "title": "Азалия",
@@ -90,7 +90,7 @@
       "/images/catalog/aloe-vera-3.jpg",
       "/images/catalog/aloe-vera-4.jpg"
     ],
-    "price": 100,
+    "price": "140",
     "imgMain": "/images/main/aloe-vera.jpg",
     "descr": {
       "title": "Алоэ Вера",
@@ -129,7 +129,7 @@
       "/images/catalog/sansevieria-3.jpg",
       "/images/catalog/sansevieria-4.jpg"
     ],
-    "price": 100,
+    "price": "170",
     "imgMain": "/images/main/sansevieria.jpg",
     "descr": {
       "title": "Сансевиерия",
@@ -168,7 +168,7 @@
       "/images/catalog/monstera-3.jpg",
       "/images/catalog/monstera-4.jpg"
     ],
-    "price": 100,
+    "price": "110",
     "imgMain": "/images/main/monstera.jpg",
     "descr": {
       "title": "Монстера",
@@ -207,7 +207,7 @@
       "/images/catalog/strelitzia-3.jpg",
       "/images/catalog/strelitzia-4.jpg"
     ],
-    "price": 100,
+    "price": "160",
     "imgMain": "/images/main/strelitzia.jpg",
     "descr": {
       "title": "Стрелиция Николая",
@@ -246,7 +246,7 @@
       "/images/catalog/zamioculcas-3.jpg",
       "/images/catalog/zamioculcas-4.jpg"
     ],
-    "price": 100,
+    "price": "230",
     "imgMain": "/images/main/zamioculcas.jpg",
     "descr": {
       "title": "Замиокулькас",
@@ -285,7 +285,7 @@
       "/images/catalog/aylostera-3.jpg",
       "/images/catalog/aylostera-4.jpg"
     ],
-    "price": 100,
+    "price": "200",
     "imgMain": "/images/main/aylostera.jpg",
     "descr": {
       "title": "Айлостера",
@@ -363,7 +363,7 @@
       "/images/catalog/adiantum-3.jpg",
       "/images/catalog/adiantum-4.jpg"
     ],
-    "price": 100,
+    "price": "130",
     "imgMain": "/images/main/adiantum.jpg",
     "descr": {
       "title": "Адиантум (Венерин волос)",
@@ -402,7 +402,7 @@
       "/images/catalog/davallia-3.jpg",
       "/images/catalog/davallia-4.jpg"
     ],
-    "price": 100,
+    "price": "150",
     "imgMain": "/images/main/davallia.jpg",
     "descr": {
       "title": "Фиджийская даваллия",
@@ -441,7 +441,7 @@
       "/images/catalog/nertera-3.jpg",
       "/images/catalog/nertera-4.jpg"
     ],
-    "price": 100,
+    "price": "110",
     "imgMain": "/images/main/nertera.jpg",
     "descr": {
       "title": "Нертера (Коралловая ягода)",
@@ -519,7 +519,7 @@
       "/images/catalog/hibiscus-3.jpg",
       "/images/catalog/hibiscus-4.jpg"
     ],
-    "price": 100,
+    "price": "240",
     "imgMain": "/images/main/hibiscus.jpg",
     "descr": {
       "title": "Гибискус болотный",
@@ -558,7 +558,7 @@
       "/images/catalog/jasmine-3.jpg",
       "/images/catalog/jasmine-4.jpg"
     ],
-    "price": 100,
+    "price": "170",
     "imgMain": "/images/main/jasmine.jpg",
     "descr": {
       "title": "Жасмин самбак",
@@ -597,7 +597,7 @@
       "/images/catalog/camellia-3.jpg",
       "/images/catalog/camellia-4.jpg"
     ],
-    "price": 100,
+    "price": "200",
     "imgMain": "/images/main/camellia.jpg",
     "descr": {
       "title": "Камелия японская",
@@ -636,7 +636,7 @@
       "/images/catalog/bilbergia-3.jpg",
       "/images/catalog/bilbergia-4.jpg"
     ],
-    "price": 100,
+    "price": "120",
     "imgMain": "/images/main/bilbergia.jpg",
     "descr": {
       "title": "Бильбергия поникающая",
@@ -675,7 +675,7 @@
       "/images/catalog/cryptanthus-3.jpg",
       "/images/catalog/cryptanthus-4.jpg"
     ],
-    "price": 100,
+    "price": "180",
     "imgMain": "/images/main/cryptanthus.jpg",
     "descr": {
       "title": "Криптантус Бесстебельный",
@@ -714,7 +714,7 @@
       "/images/catalog/hyacinth-3.jpg",
       "/images/catalog/hyacinth-4.jpg"
     ],
-    "price": 100,
+    "price": "190",
     "imgMain": "/images/main/hyacinth.jpg",
     "descr": {
       "title": "Гиацинт Вудсток",
@@ -753,7 +753,7 @@
       "/images/catalog/lily-3.jpg",
       "/images/catalog/lily-4.jpg"
     ],
-    "price": 100,
+    "price": "200",
     "imgMain": "/images/main/lily.jpg",
     "descr": {
       "title": "Лилия Апполо",
@@ -777,6 +777,31 @@
           "item-p": "Чтобы лилии росли и развивались в пределах нормы, главное, их своевременно подкармливать и поливать. Наилучшим местом для посадки будет такое, где верхняя часть куста будет на солнце, а нижняя — в тени. В первой половине дня куст обязательно должен получить большое количество яркого света солнца. А чтобы уберечь землю и корневую систему лилий от пересыхания и перегрева, меж кустов рекомендуется высадить низкорослые или почвопокровные садовые культуры."
         }
       ]
+    }
+  },
+  {
+    "idAt": "QNI6QY2HL_",
+    "method": ["Оранжерея", "Садовые цветы"],
+    "group": "луковичных",
+    "genus": "многолетних травянистых луковичных",
+    "family": "Лилейные",
+    "name": "Тюльпан",
+    "images": [
+      "/images/catalog/tyulpan-1.jpg",
+      "/images/catalog/tyulpan-2.jpg",
+      "/images/catalog/tyulpan-3.jpg",
+      "/images/catalog/tyulpan-4.jpg"
+    ],
+    "price": 150,
+    "imgMain": "/images/main/tyulpan.jpg",
+    "descr": {
+      "title": "Тюльпан",
+      "p": "Тюльпаны – одни из наиболее распространенных цветков на клумбе, которые радуют своей красотой с ранней весны. Благодаря большой работе селекционеров сегодня можно встретить несколько сотен гибридов, отличающихся по форме бутона, окраске, махровости лепестков. Тюльпаны выращиваются на клумбах и в коммерческих целях к 8 марта, при этом в обоих случаях они требуют соблюдения правил посадки и ухода.\nТюльпаны – это большое семейство из более 100 видов растений, которое включает около 3000 сортов. Цветки сильно различаются по размеру и форме в зависимости от сорта. Хотя они являются многолетниками, некоторые садоводы предпочитают выращивать тюльпаны, особенно гибридные сорта, как однолетник, поскольку не всегда цветение также красиво на второй год. У одних сортов бутоны имеют форму чашки, другие выполнены в виде звезды. Вне зависимости от вида и сорта цветки имеют шесть лепестков, которые могут быть гладкими, с бахромой или махровыми. Цветки могут быть одиночными или двойными, одноцветными, полосатыми или маргинальными."
+    },
+    "care": {
+      "title": "Уход",
+      "subtitle": "Общий уход",
+      "p": "Когда дело доходит до выбора почвы, стоит убедиться, что она подходит растению. Тюльпаны предпочитают песчаный нейтральный или слабокислый грунт, который хорошо дренирован. Его допускается обогатить компостом или гумусом. Не стоит высаживать цветы в местах, где вода долгое время стоит, поскольку в таких условиях луковицы быстро сгнивают. Растениям необходимо много солнечного света на протяжении всего дня, поэтому в качестве идеального места для посадки нужно выбирать открытую площадь, без деревьев и кустарников поблизости.\nВажно! В теплом климате предварительно потребуется положить луковицы тюльпанов в холодильник на 6 недель, прежде чем их сажать. В качестве контейнера можно использовать бумажный мешок."
     }
   }
 ]

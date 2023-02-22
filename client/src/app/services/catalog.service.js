@@ -3,10 +3,25 @@ import httpService from "./http.service";
 const catalogEndPoint = "catalog/";
 
 const catalogService = {
-    getAll: async () => {
-        const {data} = await httpService.get(catalogEndPoint);
-        return data;
-    }
+  getAll: async () => {
+    const { data } = await httpService.get(catalogEndPoint);
+    return data;
+  },
+  upload: async (payload) => {
+    const { data } = await httpService.post(
+      catalogEndPoint + "upload/",
+      payload
+    );
+    return data;
+  },
+  update: async (productId, payload, price, idAt) => {
+    const { data } = await httpService.patch(catalogEndPoint + productId, {
+      payload,
+      price,
+      idAt,
+    });
+    return data;
+  },
 };
 
 export default catalogService;

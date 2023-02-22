@@ -31,7 +31,7 @@ const CatalogPage = () => {
   };
   useEffect(() => {
     setCurrentPage(1);
-  }, [isSelectedGroup, isSelectedMethod]);
+  }, [isSelectedGroup, isSelectedMethod, catalog]);
 
   if (catalog) {
     const firstPageIndex = (currentPage - 1) * PageSize;
