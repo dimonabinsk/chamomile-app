@@ -23,7 +23,15 @@ export default function ModalDialog({
 }) {
   //   console.log(prod);
   return (
-    <Dialog open={isOpen} handler={handler}>
+    <Dialog
+      open={isOpen}
+      handler={handler}
+      animate={{
+        mount: { scale: 1, y: 0 },
+        unmount: { scale: 0.9, y: -100 },
+      }}
+      size={"sm"}
+    >
       <DialogHeader>{title}</DialogHeader>
       <DialogBody divider>
         <form onSubmit={handleSubmit} id="form-price">

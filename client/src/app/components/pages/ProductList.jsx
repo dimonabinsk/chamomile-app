@@ -1,7 +1,7 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Tooltip, Typography } from "@material-tailwind/react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCatalog, updateCatalogProduct } from "../../store/catalog";
 import { ModalDialog } from "../ui/modal";
@@ -14,6 +14,7 @@ const ProductList = (props) => {
   const [isPrice, setPrice] = useState(100);
   const [isOpenModalPrice, setOpenModalPrice] = useState(false);
   const [defPrice, setDefPrice] = useState(100);
+  const [isName, setName] = useState("");
 
   const [isProduct, setProduct] = useState(null);
 
@@ -24,6 +25,7 @@ const ProductList = (props) => {
   const toggleModalPrice = (prod) => {
     setProduct(prod);
     setDefPrice(prod.price);
+    setName(prod.name);
     setOpenModalPrice(!isOpenModalPrice);
   };
 
@@ -39,10 +41,6 @@ const ProductList = (props) => {
     setOpenModalPrice(!isOpenModalPrice);
   };
 
-  useEffect(() => {
-    // console.log(isProduct);
-  }, [isProduct]);
-
   function TableBody() {
     return catalog.map((prod, i) => {
       return (
@@ -55,7 +53,7 @@ const ProductList = (props) => {
           <td className="whitespace-nowrap px-6 py-4 text-center text-sm font-medium text-gray-900">
             {i + 1}
           </td>
-          <td className="whitespace-nowrap px-6 py-4 text-center font-miama text-lg font-semibold text-graphite">
+          <td className="whitespace-nowrap py-4 text-center font-miama text-lg font-semibold text-graphite">
             {prod.name}
           </td>
           <td className="whitespace-nowrap px-6 py-4 text-center font-semibold text-gray-900">
@@ -104,7 +102,7 @@ const ProductList = (props) => {
                       </th>
                       <th
                         scope="col"
-                        className="px-6 py-4 text-center text-sm font-medium text-gray-900"
+                        className="py-4 text-center text-sm font-medium text-gray-900 "
                       >
                         Название
                       </th>
@@ -136,7 +134,7 @@ const ProductList = (props) => {
         handler={toggleModalPrice}
         cancel={"Закрыть"}
         type={"number"}
-        title={"Изменить цену товара"}
+        title={`${isName}`}
         prod={isProduct}
         label={"Цена ₽"}
         nameInput={"product-price"}
