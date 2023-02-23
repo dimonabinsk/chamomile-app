@@ -5,6 +5,7 @@ const config = require("config");
 const chalk = require("chalk");
 const fileupload = require("express-fileupload");
 const cors = require("cors");
+const path = require("path");
 const initDataBase = require("./startUp/initDataBase");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
@@ -28,6 +29,16 @@ const MongoDB = process.env.DB_MONGO;
 // } else {
 //     console.log("Development");
 // }
+
+if (process.env.NODE_ENV === "production") {
+  app.use("/", express.static(path.join(__dirname, "client")));
+
+  const indexPath = path.join(__dirname, "client", "index.html");
+
+  app.get("*", (req, res) => {
+    res.sendFile(indexPath);
+  });
+}
 
 async function start() {
   try {
