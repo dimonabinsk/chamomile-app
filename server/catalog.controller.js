@@ -21,7 +21,7 @@ async function updateCatalog(id, data) {
   if (catalog.length > 0) {
     const newCatalog = catalog.map((prod) => {
       if (prod.idAt === id) {
-        console.log(chalk.yellowBright(`Продукт '${prod.title}' был изменён!`));
+        console.log(chalk.yellowBright(`Продукт '${prod.name}' был изменён!`));
         return {
           ...prod,
           ...data,
@@ -34,8 +34,24 @@ async function updateCatalog(id, data) {
   }
 }
 
+async function deleteCatalog(id) {
+  const catalog = await getCatalog();
+  if (catalog.length > 0) {
+    const newCatalog = catalog.filter((prod) => {
+      if (prod.idAt !== id) {
+        return prod;
+      } else {
+        console.log(chalk.yellowBright(`Продукт '${prod.name}' был удалён!`));
+      }
+    });
+
+    await fs.writeFile(catalogPath, JSON.stringify(newCatalog));
+  }
+}
+
 module.exports = {
   getCatalog,
   addCatalog,
   updateCatalog,
+  deleteCatalog,
 };

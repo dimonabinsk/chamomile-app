@@ -6,6 +6,7 @@ import ProductCard from "./card/productCard";
 import CardMain from "./card/cardMain";
 import { ProtectedRoute } from "./protectedRoute";
 import { SwiperSlider } from "./swiperSlider";
+import { ModalPrice, ModalDelete } from "./modal";
 
 export {
   Pagination,
@@ -15,4 +16,6 @@ export {
   CardMain,
   ProtectedRoute,
   SwiperSlider,
+  ModalPrice,
+  ModalDelete,
 };

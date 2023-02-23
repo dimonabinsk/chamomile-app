@@ -1,6 +1,6 @@
 import HomePage from "./HomePage";
 import CatalogPage from "./CatalogPage";
-import EditUserPage from "./EditUserPage";
+
 import UserPage from "./UserPage";
 import ProductPage from "./ProductPage";
 import BasketPage from "./BasketPage";
@@ -12,12 +12,11 @@ import CreatedProduct from "./CreatedProduct";
 export {
   HomePage,
   CatalogPage,
-  EditUserPage,
   UserPage,
   ProductPage,
   BasketPage,
   LicensePage,
   AdminPage,
   ProductList,
-  CreatedProduct
+  CreatedProduct,
 };

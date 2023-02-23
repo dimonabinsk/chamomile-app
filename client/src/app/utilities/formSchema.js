@@ -79,4 +79,11 @@ const LoginFormSchema = yup.object().shape({
     .matches(emailRegExp, "Email должен быть формата 'dM007@tw.com'"),
 });
 
-export { RegisterFormSchema, LoginFormSchema };
+const ChangeEmailSchema = yup.object().shape({
+  email: yup
+    .string()
+    .required("Обязательное поле")
+    .matches(emailRegExp, "Email должен быть формата 'dM007@tw.com'"),
+});
+
+export { RegisterFormSchema, LoginFormSchema, ChangeEmailSchema };

@@ -48,7 +48,7 @@ function App() {
         >
           <Header fixed={fixedHeader} />
           <Switch>
-            <ProtectedRoute path="/user/:userId?/:edit?" component={User} />
+            <ProtectedRoute path="/user/:userId?" component={User} />
             <ProtectedRoute path="/basket" component={BasketPage} />
             <ProtectedRoute path="/admin" component={Admin} />
             <Route path="/accessories" component={Accessories} />

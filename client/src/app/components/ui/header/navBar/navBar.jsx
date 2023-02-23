@@ -42,21 +42,19 @@ export default function NavBar() {
     <Navbar
       className={` mx-auto max-w-screen-3xl border-none bg-main-white transition-all dark:bg-main-black dark:shadow-lg lg:top-5 lg:px-8 lg:py-4 lg:opacity-90`}
     >
-      <div className="container flex items-center justify-between mx-auto">
+      <div className="container mx-auto flex items-center justify-between">
         {<Logo darkMode={isDarkMode} />}
         <div className="hidden lg:block">
           {<Search />}
           {<NavList />}
         </div>
-        <div className="flex justify-around flex-grow lg:w-20 lg:flex-grow-0 lg:justify-between">
+        <div className="flex flex-grow justify-around lg:w-20 lg:flex-grow-0 lg:justify-between">
           {isLoggedIn ? (
             <NavProfile />
           ) : (
             <NavLink
               to={"/login"}
-              className={
-                "cursor-pointer text-green-4 hover:text-green-2 dark:text-green-3 dark:hover:text-green-1"
-              }
+              className="mt-3 cursor-pointer text-green-4 hover:text-green-2 dark:text-green-3 dark:hover:text-green-1"
               exact
             >
               <Tooltip
@@ -65,9 +63,7 @@ export default function NavBar() {
                   mount: { scale: 1, y: 0 },
                   unmount: { scale: 0, y: 25 },
                 }}
-                className={
-                  "bg-transparent font-bk-rt text-green-4 dark:text-green-1"
-                }
+                className="bg-transparent font-bk-rt text-green-4 dark:text-green-1"
               >
                 <FontAwesomeIcon icon={faUser} size="xl" />
               </Tooltip>

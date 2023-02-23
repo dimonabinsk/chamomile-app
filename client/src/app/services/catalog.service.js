@@ -22,6 +22,10 @@ const catalogService = {
     });
     return data;
   },
+  delete: async (productId, idAt) => {
+    const { data } = await httpService.delete(catalogEndPoint + productId);
+    return data;
+  },
 };
 
 export default catalogService;

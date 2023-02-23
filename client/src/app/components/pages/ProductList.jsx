@@ -3,8 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Tooltip, Typography } from "@material-tailwind/react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCatalog, updateCatalogProduct } from "../../store/catalog";
-import { ModalDialog } from "../ui/modal";
+import {
+  deleteCatalogProduct,
+  getCatalog,
+  updateCatalogProduct,
+} from "../../store/catalog";
+import { ModalPrice, ModalDelete } from "../common";
+
 import { SpinnerLoader } from "../ui/spinnerLoader";
 // import PropTypes from 'prop-types'
 
@@ -13,6 +18,7 @@ const ProductList = (props) => {
   const catalog = useSelector(getCatalog());
   const [isPrice, setPrice] = useState(100);
   const [isOpenModalPrice, setOpenModalPrice] = useState(false);
+  const [isOpenModalDelete, setOpenModalDelete] = useState(false);
   const [defPrice, setDefPrice] = useState(100);
   const [isName, setName] = useState("");
 
@@ -28,7 +34,11 @@ const ProductList = (props) => {
     setName(prod.name);
     setOpenModalPrice(!isOpenModalPrice);
   };
-
+  const toggleModalDelete = (prod) => {
+    setProduct(prod);
+    setName(prod.name);
+    setOpenModalDelete(!isOpenModalDelete);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     setProduct((prev) => ({
@@ -39,6 +49,12 @@ const ProductList = (props) => {
       updateCatalogProduct(isProduct._id, isProduct, isPrice, isProduct.idAt)
     );
     setOpenModalPrice(!isOpenModalPrice);
+  };
+
+  const handleDelete = () => {
+    console.log("del");
+    dispatch(deleteCatalogProduct(isProduct._id, isProduct.idAt));
+    setOpenModalDelete(!isOpenModalDelete);
   };
 
   function TableBody() {
@@ -69,7 +85,11 @@ const ProductList = (props) => {
           </td>
           <td className="whitespace-nowrap px-6 py-4 text-center text-sm text-gray-900">
             <Tooltip content="Удалить из каталога">
-              <Button variant="outlined" color="red">
+              <Button
+                variant="outlined"
+                color="red"
+                onClick={() => toggleModalDelete(prod)}
+              >
                 Удалить
               </Button>
             </Tooltip>
@@ -129,7 +149,7 @@ const ProductList = (props) => {
           </div>
         </div>
       </div>
-      <ModalDialog
+      <ModalPrice
         isOpen={isOpenModalPrice}
         handler={toggleModalPrice}
         cancel={"Закрыть"}
@@ -142,6 +162,14 @@ const ProductList = (props) => {
         confirm={"Изменить"}
         handleSubmit={handleSubmit}
         defaultValue={defPrice}
+      />
+      <ModalDelete
+        isOpen={isOpenModalDelete}
+        handler={toggleModalDelete}
+        title={`${isName}`}
+        cancel={"Отменить"}
+        confirm={"Удалить"}
+        handleDelete={handleDelete}
       />
     </>
   );

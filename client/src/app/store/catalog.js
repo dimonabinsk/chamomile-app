@@ -40,7 +40,15 @@ const catalogSlice = createSlice({
       });
 
       state.entities = newProductList;
+      state.isSubmit = true;
       state.isLoading = false;
+    },
+    catalogDelete: (state, action) => {
+      state.entities = state.entities.filter(
+        (prod) => prod._id !== action.payload.id
+      );
+      state.isLoading = false;
+      state.isSubmit = true;
     },
     catalogRequestFailed: (state, action) => {
       state.error = action.payload;
@@ -57,6 +65,7 @@ const {
   catalogRequestFailed,
   catalogAddReceived,
   catalogUpdate,
+  catalogDelete,
 } = actions;
 
 export const loadCatalogList = () => async (dispatch, getState) => {
@@ -97,6 +106,16 @@ export const updateCatalogProduct =
       dispatch(catalogRequestFailed(error.message));
     }
   };
+
+export const deleteCatalogProduct = (productId) => async (dispatch) => {
+  dispatch(catalogRequested());
+  try {
+    const { content } = await catalogService.delete(productId);
+    dispatch(catalogDelete(content));
+  } catch (error) {
+    dispatch(catalogRequestFailed(error.message));
+  }
+};
 
 export const getProductById = (plantId) => (state) => {
   // console.log("state", state.catalog.entities);

@@ -6,13 +6,12 @@ const router = express.Router({ mergeParams: true });
 router.patch("/:userId", auth, async (req, res) => {
   try {
     const { userId } = req.params;
-    // todo: userId === current user id
-    // console.log(req.user);
-    if (userId === req.user._id) {
-      const updatedUser = await User.findByIdAndUpdate(userId, req.body, {
+
+    if (userId === req.body.user._id) {
+      const updatedUser = await User.findByIdAndUpdate(userId, req.body.data, {
         new: true,
       });
-      res.status(200).send(updatedUser);
+      res.status(201).send(updatedUser);
     } else {
       res.status(401).json({ message: "Unauthorized" });
     }

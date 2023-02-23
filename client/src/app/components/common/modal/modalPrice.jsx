@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   Button,
   Dialog,
@@ -6,9 +7,10 @@ import {
   DialogFooter,
   DialogHeader,
   Input,
+  Typography,
 } from "@material-tailwind/react";
 
-export default function ModalDialog({
+const ModalPrice = ({
   isOpen,
   handler,
   title,
@@ -20,7 +22,7 @@ export default function ModalDialog({
   label,
   nameInput,
   handleSubmit,
-}) {
+}) => {
   //   console.log(prod);
   return (
     <Dialog
@@ -30,9 +32,12 @@ export default function ModalDialog({
         mount: { scale: 1, y: 0 },
         unmount: { scale: 0.9, y: -100 },
       }}
-      size={"sm"}
     >
-      <DialogHeader>{title}</DialogHeader>
+      <DialogHeader>
+        <Typography variant="h4" color="gray">
+          {title}
+        </Typography>
+      </DialogHeader>
       <DialogBody divider>
         <form onSubmit={handleSubmit} id="form-price">
           <Input
@@ -62,4 +67,20 @@ export default function ModalDialog({
       </DialogFooter>
     </Dialog>
   );
-}
+};
+
+ModalPrice.propTypes = {
+  isOpen: PropTypes.bool,
+  handler: PropTypes.func,
+  title: PropTypes.string,
+  type: PropTypes.string,
+  confirm: PropTypes.string,
+  cancel: PropTypes.string,
+  change: PropTypes.func,
+  defaultValue: PropTypes.number,
+  label: PropTypes.string,
+  nameInput: PropTypes.string,
+  handleSubmit: PropTypes.func,
+};
+
+export default ModalPrice;

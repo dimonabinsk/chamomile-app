@@ -5,7 +5,11 @@ const fs = require("fs/promises");
 const mongoose = require("mongoose");
 const chalk = require("chalk");
 const initDataBase = require("../startUp/initDataBase");
-const { addCatalog, updateCatalog } = require("../catalog.controller");
+const {
+  addCatalog,
+  updateCatalog,
+  deleteCatalog,
+} = require("../catalog.controller");
 const { send } = require("process");
 
 const router = express.Router({ mergeParams: true });
@@ -72,7 +76,7 @@ router
               if (err) {
                 res
                   .status(500)
-                  .send({ message: "File upload failed", code: 500 });
+                  .send({ message: "Не удалось загрузить файл", code: 500 });
               }
 
               console.log(chalk.yellow("Файл был записан"));
@@ -86,7 +90,7 @@ router
               if (err) {
                 res
                   .status(500)
-                  .send({ message: "File upload failed", code: 500 });
+                  .send({ message: "Не удалось загрузить файл", code: 500 });
               }
 
               console.log(chalk.yellow("Файл был записан"));
@@ -125,11 +129,23 @@ router
           },
           { new: true }
         );
-
         await updateCatalog(req.body.idAt, { price: req.body.price });
-
         res.status(201).send(newProduct);
       }
+    } catch (error) {
+      res.status(500).json({
+        massage: "На сервере произошла ошибка. Попробуйте позже",
+      });
+    }
+  })
+
+  .delete("/:productId", async (req, res) => {
+    const { productId } = req.params;
+    try {
+      const productById = await Catalog.findById(productId);
+      await productById.remove();
+      await deleteCatalog(productById.idAt);
+      res.status(201).send({ id: productById._id });
     } catch (error) {
       res.status(500).json({
         massage: "На сервере произошла ошибка. Попробуйте позже",
