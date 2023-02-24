@@ -28,10 +28,10 @@ module.exports = withMT({
 
     extend: {
       backgroundImage: {
-        banner: "url('http://87.236.16.214/api/images/banner/banner.jpg')",
-        live: "url('http://87.236.16.214/api/images/bg-link/live-plants.jpg')",
-        plant: "url('http://87.236.16.214/api/images/bg-link/plant-care.jpg')",
-        pots: "url('http://87.236.16.214/api/images/bg-link/pots-access.jpg')",
+        banner: "url('https://87.236.16.214/api/images/banner/banner.jpg')",
+        live: "url('https://87.236.16.214/api/images/bg-link/live-plants.jpg')",
+        plant: "url('https://87.236.16.214/api/images/bg-link/plant-care.jpg')",
+        pots: "url('https://87.236.16.214/api/images/bg-link/pots-access.jpg')",
       },
       screens: {
         "3xl": "1600px",
