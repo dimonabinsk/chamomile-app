@@ -61,7 +61,7 @@ const BasketPage = () => {
               <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-900">
                 {i + 1}
               </td>
-              <td className="whitespace-nowrap px-6 py-4 font-miama text-lg font-semibold text-graphite">
+              <td className="truncate whitespace-nowrap px-6 py-4 font-miama text-lg font-semibold text-graphite">
                 <Avatar
                   src={pathBase + productBasketValue[i].img}
                   alt="avatar"
