@@ -14,8 +14,9 @@ import {
 } from "@material-tailwind/react";
 import { getCurrentUserData, updateUser } from "../../store/users";
 import { InputField } from "../common";
+import { UploadAvatarForm } from "../common/uploadForm";
 
-const UserPage = ({ userId, admin }) => {
+const UserPage = ({ admin }) => {
   const dispatch = useDispatch();
   const user = useSelector(getCurrentUserData());
 
@@ -101,13 +102,15 @@ const UserPage = ({ userId, admin }) => {
             </Button>
           </form>
         </div>
+        <div className="mt-5">
+          <UploadAvatarForm />
+        </div>
       </div>
     </div>
   );
 };
 
 UserPage.propTypes = {
-  userId: PropTypes.string,
   admin: PropTypes.bool,
 };
 

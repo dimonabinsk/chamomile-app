@@ -1,59 +1,77 @@
 const express = require("express");
-const crypto = require("crypto");
-const fs = require("fs");
-const path = require("path");
+const fsPromises = require("fs/promises");
 const router = express.Router({ mergeParams: true });
-const chalk = require("chalk");
-
-
 
 router
-  .get("/main/:fileName", (req, res) => {
+  .get("/main/:fileName", async (req, res) => {
     const { fileName } = req.params;
     const dirname = req.url.split("/")[1];
     const name = fileName.split(".")[0];
+    try {
+      const img = await fsPromises.readFile(
+        `./public/images/${dirname}/${name}/${fileName}`
+      );
 
-    const img = fs.readFileSync(
-      `./public/images/${dirname}/${name}/${fileName}`
-    );
-
-    res.send(img);
+      res.send(img);
+    } catch (error) {
+      res.status(500).send({ message: error.message, code: 500 });
+    }
   })
 
-  .get("/banner/:fileName", (req, res) => {
+  .get("/banner/:fileName", async (req, res) => {
     const { fileName } = req.params;
     const dirname = req.url.split("/")[1];
     const name = fileName.split(".")[0];
+    try {
+      const img = await fsPromises.readFile(
+        `./public/images/${dirname}/${name}/${fileName}`
+      );
 
-    const img = fs.readFileSync(
-      `./public/images/${dirname}/${name}/${fileName}`
-    );
-
-    res.send(img);
+      res.send(img);
+    } catch (error) {
+      res.status(500).send({ message: error.message, code: 500 });
+    }
   })
 
-  .get("/bg-link/:fileName", (req, res) => {
+  .get("/bg-link/:fileName", async (req, res) => {
     const { fileName } = req.params;
     const dirname = req.url.split("/")[1];
     const name = fileName.split(".")[0];
+    try {
+      const img = await fsPromises.readFile(
+        `./public/images/${dirname}/${name}/${fileName}`
+      );
 
-    const img = fs.readFileSync(
-      `./public/images/${dirname}/${name}/${fileName}`
-    );
-
-    res.send(img);
+      res.send(img);
+    } catch (error) {
+      res.status(500).send({ message: error.message, code: 500 });
+    }
   })
 
-  .get("/catalog/:fileName", (req, res) => {
+  .get("/catalog/:fileName", async (req, res) => {
     const { fileName } = req.params;
     const dirname = req.url.split("/")[1];
     const name = fileName.split(".")[0].split("-")[0];
+    try {
+      const img = await fsPromises.readFile(
+        `./public/images/${dirname}/${name}/${fileName}`
+      );
 
-    const img = fs.readFileSync(
-      `./public/images/${dirname}/${name}/${fileName}`
-    );
-
-    res.send(img);
+      res.send(img);
+    } catch (error) {
+      res.status(500).send({ message: error.message, code: 500 });
+    }
+  })
+  .get("/users/:dirname/:fileName", async (req, res) => {
+    const { dirname, fileName } = req.params;
+    try {
+      const img = await fsPromises.readFile(
+        `./public/images/users/${dirname}/${fileName}`
+      );
+      res.send(img);
+    } catch (error) {
+      res.status(500).send({ message: error.message, code: 500 });
+    }
   });
 
 module.exports = router;

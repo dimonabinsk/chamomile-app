@@ -25,5 +25,9 @@ const userService = {
     );
     return data;
   },
+  updateAvatar: async (payload) => {
+    const { data } = await httpService.post(userEndpoint + "avatar", payload);
+    return data;
+  },
 };
 export default userService;

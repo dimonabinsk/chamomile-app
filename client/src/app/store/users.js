@@ -137,6 +137,16 @@ export const updateUser = (payload) => async (dispatch) => {
   }
 };
 
+export const updateUserAvatar = (payload) => async (dispatch) => {
+  dispatch(userUpdateRequested());
+  try {
+    const { content } = await userService.updateAvatar(payload);
+    dispatch(userUpdateSuccess(content));
+  } catch (error) {
+    dispatch(userUpdateFailed(error.message));
+  }
+};
+
 export const getUsersList = () => (state) => state.users.entities;
 
 export const getCurrentUserData = () => (state) => {
