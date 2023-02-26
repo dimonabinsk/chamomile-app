@@ -76,7 +76,7 @@ const CatalogPage = () => {
                 return (
                   <div key={item._id} className="my-8">
                     <ProductCard
-                      path={`/catalog/${item._id}`}
+                      path={`catalog/${item._id}`}
                       src={pathBase + item.imgMain}
                       alt={item.name}
                       price={item.price}

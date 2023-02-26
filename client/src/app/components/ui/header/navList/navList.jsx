@@ -3,28 +3,27 @@ import PropTypes from "prop-types";
 
 import { NavLink } from "react-router-dom";
 
-
-const NavList = ({onOpen}) => {
+const NavList = ({ onOpen }) => {
   const linkList = [
     {
       id: 1,
       name: "Каталог цветов",
-      path: "/catalog",
+      path: "/catalog/",
     },
     {
       id: 2,
       name: "Аксессуары",
-      path: "/accessories",
+      path: "/accessories/",
     },
     {
       id: 3,
       name: "Уход за растениями",
-      path: "/plantcare",
+      path: "/plantcare/",
     },
     {
       id: 4,
       name: "Блог",
-      path: "/blog",
+      path: "/blog/",
     },
   ];
   const classes =
@@ -33,9 +32,12 @@ const NavList = ({onOpen}) => {
   const activeClasses =
     "text-green-2  dark:text-green-1 dark:border-b-green-1 border-b-green-2 border-b-2";
 
-
   return (
-    <ul className={"mb-4 mt-2 inline-flex flex-col gap-2 lg:flex lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6"}>
+    <ul
+      className={
+        "mb-4 mt-2 inline-flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex lg:flex-row lg:items-center lg:gap-6"
+      }
+    >
       {linkList.map(({ id, name, path }) => (
         <li
           key={id}
@@ -57,7 +59,7 @@ const NavList = ({onOpen}) => {
 };
 //
 NavList.propTypes = {
-  onOpen: PropTypes.func
+  onOpen: PropTypes.func,
 };
 
 export default NavList;
