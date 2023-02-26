@@ -16,7 +16,7 @@ import { getCurrentUserData, updateUser } from "../../store/users";
 import { InputField } from "../common";
 import { UploadAvatarForm } from "../common/uploadForm";
 
-const UserPage = ({ admin }) => {
+const UserPage = ({ userId, admin }) => {
   const dispatch = useDispatch();
   const user = useSelector(getCurrentUserData());
 
@@ -46,7 +46,11 @@ const UserPage = ({ admin }) => {
       <div className="mb-10">
         <Card>
           <CardHeader>
-            <img src={user.image} alt="" />
+            <img
+              src={user.image}
+              alt=""
+              className="inline-block w-[480px] object-cover object-center"
+            />
           </CardHeader>
           <CardBody className="text-center">
             <Typography variant="h4" color="blue-gray" className="mb-2">
@@ -61,7 +65,7 @@ const UserPage = ({ admin }) => {
         </Card>
       </div>
 
-      <div className="">
+      <div className="sm:px-5">
         {admin && (
           <ul>
             <li className="mt-5 text-base hover:text-green-2 dark:text-main-white dark:hover:text-green-3">
@@ -98,10 +102,11 @@ const UserPage = ({ admin }) => {
               disabled={!isValid}
               fullWidth
             >
-              изменит email
+              изменить email
             </Button>
           </form>
         </div>
+
         <div className="mt-5">
           <UploadAvatarForm />
         </div>
@@ -111,6 +116,7 @@ const UserPage = ({ admin }) => {
 };
 
 UserPage.propTypes = {
+  userId: PropTypes.string,
   admin: PropTypes.bool,
 };
 
