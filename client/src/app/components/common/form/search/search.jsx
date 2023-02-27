@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { Input } from "@material-tailwind/react";
 
@@ -10,7 +10,6 @@ import config from "../../../../../config.json";
 const BASE_URL = config.API_BASE_URL;
 
 const Search = () => {
-  const history = useHistory();
   const [isSearch, setSearch] = useState("");
   const catalog = useSelector(getCatalog());
 
@@ -48,18 +47,28 @@ const Search = () => {
           <ul className="max-w-xs divide-y divide-gray-200 dark:divide-gray-700 sm:max-w-sm">
             {filterCatalog.map((prod, i) => (
               <li
-                className="cursor-pointer truncate px-2 py-3 hover:bg-blue-gray-200 dark:hover:bg-green-4 sm:p-5"
+                className="truncate hover:bg-blue-gray-200 dark:hover:bg-green-4 "
                 key={prod._id + i}
-                onClick={() => {
-                  setSearch("");
-                  history.location.pathname
-                    .split("/")
-                    .findIndex((el) => el === "catalog") !== -1
-                    ? history.push(`${prod._id}`)
-                    : history.push(`catalog/${prod._id}`);
-                }}
+                onClick={() => setSearch("")}
               >
-                <div className="flex items-center space-x-4">
+                <Link
+                  to={(location) => {
+                    switch (location.pathname) {
+                      case "/":
+                        return {
+                          ...location,
+                          pathname: `catalog/${prod._id}`,
+                        };
+
+                      default:
+                        return {
+                          ...location,
+                          pathname: `../catalog/${prod._id}`,
+                        };
+                    }
+                  }}
+                  className="flex items-center space-x-4 px-2 py-3 sm:p-5"
+                >
                   <div className="flex-shrink-0">
                     <img
                       className="h-8 w-8 rounded-full"
@@ -75,7 +84,7 @@ const Search = () => {
                   <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-main-white">
                     ₽{prod.price}
                   </div>
-                </div>
+                </Link>
               </li>
             ))}
           </ul>
