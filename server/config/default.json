@@ -2,5 +2,5 @@
   "port": 8080,
   "accessSecret": "super secret from backend",
   "refreshSecret": "super refresh key",
-  "BASE_URL": "http://45.146.166.210/api"
+  "BASE_URL": "http://192.168.1.112/api"
 }
